@@ -20,7 +20,7 @@ export default function Navbar() {
             >
               <span className="text-3xl mr-2">🍰</span>
               <span
-                className="font-bold text-2xl"
+                className="font-bold text-2xl hidden sm:block"
                 style={{ fontFamily: "Lobster, cursive" }}
               >
                 Vanilla Pod Confections
