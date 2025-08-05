@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 
 export default function Products() {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [cart, setCart] = useState([]);
+
   const productsStructuredData = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -73,6 +77,42 @@ export default function Products() {
     "Cake Pops",
   ];
 
+  // Filter products based on selected category
+  const filteredProducts =
+    selectedCategory === "All"
+      ? products
+      : products.filter((product) => product.category === selectedCategory);
+
+  // Handle category filter
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+  };
+
+  // Handle add to cart
+  const handleAddToCart = (product) => {
+    const existingItem = cart.find((item) => item.id === product.id);
+
+    if (existingItem) {
+      setCart(
+        cart.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        )
+      );
+    } else {
+      setCart([...cart, { ...product, quantity: 1 }]);
+    }
+
+    // Show success message
+    alert(`${product.name} added to cart!`);
+  };
+
+  // Get cart item count
+  const getCartItemCount = () => {
+    return cart.reduce((total, item) => total + item.quantity, 0);
+  };
+
   return (
     <>
       <SEO
@@ -87,80 +127,168 @@ export default function Products() {
           {/* Header */}
           <div className="text-center mb-12">
             <h1
-              className="text-5xl font-bold text-gray-800 mb-4"
+              className="text-5xl font-bold text-gray-800 mb-4 slide-in-top"
               style={{ fontFamily: "Lobster, cursive" }}
             >
               Our Confections
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto fade-in delay-200">
               Discover our handcrafted collection of vanilla-inspired
               confections, made with love and the finest ingredients from around
               the world.
             </p>
+            {getCartItemCount() > 0 && (
+              <div className="mt-4 inline-flex items-center bg-red-100 text-red-600 px-4 py-2 rounded-full bounce-in delay-300">
+                <span className="text-lg mr-2">🛒</span>
+                <span className="font-semibold">
+                  {getCartItemCount()} item{getCartItemCount() !== 1 ? "s" : ""}{" "}
+                  in cart
+                </span>
+              </div>
+            )}
           </div>
 
           {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-2 mb-12">
-            {categories.map((category) => (
+          <div className="flex flex-wrap justify-center gap-2 mb-12 slide-in-bottom delay-300">
+            {categories.map((category, index) => (
               <button
                 key={category}
-                className="px-4 py-2 rounded-full border-2 border-red-400 text-red-400 hover:bg-red-400 hover:text-white transition-all duration-300 font-medium"
+                onClick={() => handleCategoryChange(category)}
+                className={`px-4 py-2 rounded-full border-2 border-red-400 transition-all duration-300 font-medium hover-scale ${
+                  selectedCategory === category
+                    ? "bg-red-400 text-white"
+                    : "text-red-400 hover:bg-red-400 hover:text-white"
+                }`}
+                style={{ animationDelay: `${0.5 + index * 0.1}s` }}
               >
                 {category}
               </button>
             ))}
           </div>
 
+          {/* Results Info */}
+          <div className="text-center mb-8 fade-in delay-400">
+            <p className="text-gray-600">
+              {selectedCategory === "All"
+                ? `Showing all ${filteredProducts.length} confections`
+                : `Showing ${filteredProducts.length} confection${
+                    filteredProducts.length !== 1 ? "s" : ""
+                  } in ${selectedCategory}`}
+            </p>
+          </div>
+
           {/* Products Grid */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product) => (
-              <div
-                key={product.id}
-                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
-              >
-                <div className="p-6">
-                  <div className="text-6xl text-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {product.emoji}
-                  </div>
-                  <div className="text-center">
-                    <span className="inline-block px-3 py-1 bg-red-100 text-red-600 rounded-full text-sm font-medium mb-3">
-                      {product.category}
-                    </span>
-                    <h3 className="text-xl font-bold text-gray-800 mb-2">
-                      {product.name}
-                    </h3>
-                    <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                      {product.description}
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-2xl font-bold text-red-400">
-                        {product.price}
+            {filteredProducts.length > 0 ? (
+              filteredProducts.map((product, index) => (
+                <div
+                  key={product.id}
+                  className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group scale-in hover-lift hover-glow"
+                  style={{
+                    animationDelay: `${0.6 + (index % 6) * 0.1}s`,
+                    animationFillMode: "both",
+                  }}
+                >
+                  <div className="p-6">
+                    <div className="text-6xl text-center mb-4 float pulse">
+                      {product.emoji}
+                    </div>
+                    <div className="text-center">
+                      <span className="inline-block px-3 py-1 bg-red-100 text-red-600 rounded-full text-sm font-medium mb-3 shimmer">
+                        {product.category}
                       </span>
-                      <button className="bg-red-400 hover:bg-red-500 text-white font-semibold py-2 px-4 rounded-full transition-all duration-300 hover:-translate-y-1 transform shadow-md">
-                        Add to Cart
-                      </button>
+                      <h3 className="text-xl font-bold text-gray-800 mb-2">
+                        {product.name}
+                      </h3>
+                      <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                        {product.description}
+                      </p>
+                      <div className="flex items-center justify-between">
+                        <span className="text-2xl font-bold text-red-400 text-glow">
+                          {product.price}
+                        </span>
+                        <button
+                          onClick={() => handleAddToCart(product)}
+                          className="bg-red-400 hover:bg-red-500 text-white font-semibold py-2 px-4 rounded-full transition-all duration-300 hover-lift transform shadow-md hover-glow"
+                        >
+                          Add to Cart
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
+              ))
+            ) : (
+              <div className="col-span-full text-center py-12 fade-in">
+                <div className="text-6xl mb-4 bounce-in">🍮</div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-2 slide-in-top delay-200">
+                  No confections found
+                </h3>
+                <p className="text-gray-600 mb-4 fade-in delay-300">
+                  We couldn't find any confections in the "{selectedCategory}"
+                  category.
+                </p>
+                <button
+                  onClick={() => handleCategoryChange("All")}
+                  className="bg-red-400 hover:bg-red-500 text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 hover-lift hover-glow scale-in delay-400"
+                >
+                  View All Products
+                </button>
               </div>
-            ))}
+            )}
           </div>
 
           {/* Call to Action */}
-          <div className="text-center mt-16 bg-white rounded-xl shadow-lg p-8">
+          <div className="text-center mt-16 bg-white rounded-xl shadow-lg p-8 slide-in-bottom delay-500 hover-lift">
             <h2
-              className="text-3xl font-bold text-gray-800 mb-4"
+              className="text-3xl font-bold text-gray-800 mb-4 text-glow"
               style={{ fontFamily: "Lobster, cursive" }}
             >
               Can't Find What You're Looking For?
             </h2>
-            <p className="text-lg text-gray-600 mb-6">
+            <p className="text-lg text-gray-600 mb-6 fade-in delay-600">
               We offer custom confections for special occasions and events.
             </p>
-            <button className="bg-red-400 hover:bg-red-500 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:-translate-y-1 transform shadow-lg">
+            <Link
+              to="/contact"
+              className="inline-block bg-red-400 hover:bg-red-500 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover-lift transform shadow-lg hover-glow pulse"
+            >
               Contact Us for Custom Orders
-            </button>
+            </Link>
           </div>
+
+          {/* Cart Summary (if items in cart) */}
+          {getCartItemCount() > 0 && (
+            <div className="fixed bottom-4 right-4 bg-red-400 text-white p-4 rounded-xl shadow-lg slide-in-right hover-scale float">
+              <div className="flex items-center space-x-3">
+                <span className="text-2xl pulse">🛒</span>
+                <div>
+                  <p className="font-semibold">
+                    {getCartItemCount()} item
+                    {getCartItemCount() !== 1 ? "s" : ""}
+                  </p>
+                  <p className="text-sm opacity-90">
+                    Total: $
+                    {cart
+                      .reduce(
+                        (total, item) =>
+                          total +
+                          parseFloat(item.price.replace("$", "")) *
+                            item.quantity,
+                        0
+                      )
+                      .toFixed(2)}
+                  </p>
+                </div>
+                <Link
+                  to="/cart"
+                  className="bg-white text-red-400 px-3 py-1 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors duration-200 hover-scale"
+                >
+                  View Cart
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </>
