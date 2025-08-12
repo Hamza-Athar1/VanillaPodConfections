@@ -47,7 +47,7 @@ export default function About() {
 
           {/* Main Story Section */}
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
-            <div className="bg-white rounded-xl shadow-lg p-8 slide-in-left delay-300 hover-lift">
+            <div className="bg-white rounded-xl shadow-lg p-8 slide-in-left delay-300 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2">
               <h2
                 className="text-3xl font-bold text-gray-800 mb-6 text-glow"
                 style={{ fontFamily: "Lobster, cursive" }}
@@ -70,21 +70,21 @@ export default function About() {
               </p>
             </div>
 
-            <div className="bg-white rounded-xl shadow-lg p-8 slide-in-right delay-400 hover-lift">
+            <div className="bg-white rounded-xl shadow-lg p-8 slide-in-right delay-400 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2 group">
               <div className="text-center">
-                <div className="text-8xl mb-6 bounce-in delay-600 float">
+                <div className="text-8xl mb-6 bounce-in delay-600 float group-hover:scale-110 transition-transform duration-300">
                   👩‍🍳
                 </div>
                 <h3
-                  className="text-2xl font-bold text-gray-800 mb-4 text-glow fade-in delay-700"
+                  className="text-2xl font-bold text-gray-800 mb-4 text-glow fade-in delay-700 group-hover:text-red-500 transition-colors duration-300"
                   style={{ fontFamily: "Lobster, cursive" }}
                 >
                   Sumaira
                 </h3>
-                <p className="text-red-400 font-semibold mb-4 fade-in delay-800">
+                <p className="text-red-400 font-semibold mb-4 fade-in delay-800 group-hover:text-red-500 transition-colors duration-300">
                   Founder & Head Pastry Chef
                 </p>
-                <p className="text-gray-600 leading-relaxed fade-in delay-900">
+                <p className="text-gray-600 leading-relaxed fade-in delay-900 group-hover:text-gray-700 transition-colors duration-300">
                   "I've always believed that the best confections tell a story.
                   Each vanilla pod we use has traveled thousands of miles and
                   carries the essence of its origin. My job is to honor that
@@ -95,7 +95,7 @@ export default function About() {
           </div>
 
           {/* Values Section */}
-          <div className="bg-white rounded-xl shadow-lg p-8 mb-16 scale-in delay-500 hover-lift">
+          <div className="bg-white rounded-xl shadow-lg p-8 mb-16 scale-in delay-500 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2">
             <h2
               className="text-3xl font-bold text-center text-gray-800 mb-12 text-glow fade-in delay-600"
               style={{ fontFamily: "Lobster, cursive" }}
@@ -103,40 +103,40 @@ export default function About() {
               Our Values
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center fade-in delay-700 hover-scale">
-                <div className="text-6xl mb-4 bounce-in delay-800 pulse">
+              <div className="text-center fade-in delay-700 group transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+                <div className="text-6xl mb-4 bounce-in delay-800 pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
                   🌱
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-3">
+                <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-red-500 transition-colors duration-300">
                   Sustainability
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
                   We source our vanilla beans directly from farmers, ensuring
                   fair trade practices and sustainable farming methods that
                   protect the environment.
                 </p>
               </div>
-              <div className="text-center fade-in delay-800 hover-scale">
-                <div className="text-6xl mb-4 bounce-in delay-900 pulse">
+              <div className="text-center fade-in delay-800 group transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+                <div className="text-6xl mb-4 bounce-in delay-900 pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
                   ✨
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-3">
+                <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-red-500 transition-colors duration-300">
                   Quality
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
                   Every confection is made with premium ingredients and
                   traditional techniques. We never compromise on quality, even
                   as we grow.
                 </p>
               </div>
-              <div className="text-center fade-in delay-900 hover-scale">
-                <div className="text-6xl mb-4 bounce-in delay-1000 pulse">
+              <div className="text-center fade-in delay-900 group transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+                <div className="text-6xl mb-4 bounce-in delay-1000 pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
                   ❤️
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-3">
+                <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-red-500 transition-colors duration-300">
                   Passion
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
                   Our team's passion for confectionery shines through in every
                   creation. We love what we do, and we think you can taste the
                   difference.
@@ -146,7 +146,7 @@ export default function About() {
           </div>
 
           {/* Process Section */}
-          <div className="bg-gradient-to-r from-red-400 to-pink-400 rounded-xl shadow-lg p-8 text-white mb-16 slide-in-bottom delay-1000 hover-lift hover-glow">
+          <div className="bg-gradient-to-r from-red-400 to-pink-400 rounded-xl shadow-lg p-8 text-white mb-16 slide-in-bottom delay-1000 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2 group">
             <h2
               className="text-3xl font-bold text-center mb-12 text-glow bounce-in delay-1100"
               style={{ fontFamily: "Lobster, cursive" }}
@@ -154,29 +154,29 @@ export default function About() {
               Our Crafting Process
             </h2>
             <div className="grid md:grid-cols-4 gap-6 text-center">
-              <div className="fade-in delay-1200 hover-scale">
-                <div className="text-4xl mb-3 float pulse">🌍</div>
+              <div className="fade-in delay-1200 transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+                <div className="text-4xl mb-3 float pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">🌍</div>
                 <h4 className="font-bold mb-2">Source</h4>
                 <p className="text-sm opacity-90">
                   Premium vanilla beans from Madagascar, Tahiti, and Mexico
                 </p>
               </div>
-              <div className="fade-in delay-1300 hover-scale">
-                <div className="text-4xl mb-3 float pulse">🧪</div>
+              <div className="fade-in delay-1300 transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+                <div className="text-4xl mb-3 float pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">🧪</div>
                 <h4 className="font-bold mb-2">Extract</h4>
                 <p className="text-sm opacity-90">
                   Traditional extraction methods to capture pure vanilla essence
                 </p>
               </div>
-              <div className="fade-in delay-1400 hover-scale">
-                <div className="text-4xl mb-3 float pulse">👨‍🍳</div>
+              <div className="fade-in delay-1400 transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+                <div className="text-4xl mb-3 float pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">👨‍🍳</div>
                 <h4 className="font-bold mb-2">Craft</h4>
                 <p className="text-sm opacity-90">
                   Handcrafted in small batches using time-honored techniques
                 </p>
               </div>
-              <div className="fade-in delay-1500 hover-scale">
-                <div className="text-4xl mb-3 float pulse">📦</div>
+              <div className="fade-in delay-1500 transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+                <div className="text-4xl mb-3 float pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">📦</div>
                 <h4 className="font-bold mb-2">Deliver</h4>
                 <p className="text-sm opacity-90">
                   Carefully packaged and delivered fresh to your door
@@ -186,7 +186,7 @@ export default function About() {
           </div>
 
           {/* Call to Action */}
-          <div className="text-center bg-white rounded-xl shadow-lg p-8 scale-in delay-1600 hover-lift">
+          <div className="text-center bg-white rounded-xl shadow-lg p-8 scale-in delay-1600 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2">
             <h2
               className="text-3xl font-bold text-gray-800 mb-4 text-glow fade-in delay-1700"
               style={{ fontFamily: "Lobster, cursive" }}
@@ -198,10 +198,10 @@ export default function About() {
               the first to know about new flavors.
             </p>
             <div className="flex justify-center gap-4">
-              <button className="bg-red-400 hover:bg-red-500 text-white font-semibold py-3 px-6 rounded-full transition-colors duration-300 hover-lift hover-glow pulse scale-in delay-1900">
+              <button className="bg-red-400 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 pulse scale-in delay-1900 hover:bg-red-500 hover:scale-105 hover:-translate-y-1 hover:shadow-lg">
                 Visit Our Shop
               </button>
-              <button className="border-2 border-red-400 text-red-400 hover:bg-red-400 hover:text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 hover-lift hover-scale scale-in delay-2000">
+              <button className="border-2 border-red-400 text-red-400 font-semibold py-3 px-6 rounded-full transition-all duration-300 scale-in delay-2000 hover:bg-red-400 hover:text-white hover:scale-105 hover:-translate-y-1">
                 Contact Us
               </button>
             </div>

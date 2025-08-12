@@ -122,8 +122,8 @@ export default function Products() {
         url="https://vanillapodconfections.com/products"
         structuredData={productsStructuredData}
       />
-      <div className="min-h-screen bg-gradient-to-br from-pink-50 to-orange-50 pt-20">
-        <div className="max-w-6xl mx-auto px-4 py-8">
+      <div className="bg-gradient-to-br from-pink-50 to-orange-50 pt-20 pb-8">
+        <div className="max-w-6xl mx-auto px-4 py-8 min-h-[calc(100vh-5rem)]">
           {/* Header */}
           <div className="text-center mb-12">
             <h1
@@ -183,33 +183,33 @@ export default function Products() {
               filteredProducts.map((product, index) => (
                 <div
                   key={product.id}
-                  className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group scale-in hover-lift hover-glow"
+                  className="bg-white rounded-xl shadow-lg transition-all duration-300 overflow-hidden group scale-in hover:shadow-xl hover:scale-105 hover:-translate-y-2"
                   style={{
                     animationDelay: `${0.6 + (index % 6) * 0.1}s`,
                     animationFillMode: "both",
                   }}
                 >
                   <div className="p-6">
-                    <div className="text-6xl text-center mb-4 float pulse">
+                    <div className="text-6xl text-center mb-4 float pulse group-hover:scale-110 transition-transform duration-300">
                       {product.emoji}
                     </div>
                     <div className="text-center">
-                      <span className="inline-block px-3 py-1 bg-red-100 text-red-600 rounded-full text-sm font-medium mb-3 shimmer">
+                      <span className="inline-block px-3 py-1 bg-red-100 text-red-600 rounded-full text-sm font-medium mb-3 shimmer group-hover:bg-red-200 group-hover:text-red-700 transition-colors duration-300">
                         {product.category}
                       </span>
-                      <h3 className="text-xl font-bold text-gray-800 mb-2">
+                      <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-red-500 transition-colors duration-300">
                         {product.name}
                       </h3>
-                      <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                      <p className="text-gray-600 mb-4 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                         {product.description}
                       </p>
                       <div className="flex items-center justify-between">
-                        <span className="text-2xl font-bold text-red-400 text-glow">
+                        <span className="text-2xl font-bold text-red-400 text-glow group-hover:text-red-500 transition-colors duration-300">
                           {product.price}
                         </span>
                         <button
                           onClick={() => handleAddToCart(product)}
-                          className="bg-red-400 hover:bg-red-500 text-white font-semibold py-2 px-4 rounded-full transition-all duration-300 hover-lift transform shadow-md hover-glow"
+                          className="bg-red-400 text-white font-semibold py-2 px-4 rounded-full transition-all duration-300 transform shadow-md hover:bg-red-500 hover:scale-105 hover:-translate-y-1 hover:shadow-lg"
                         >
                           Add to Cart
                         </button>
@@ -239,7 +239,7 @@ export default function Products() {
           </div>
 
           {/* Call to Action */}
-          <div className="text-center mt-16 bg-white rounded-xl shadow-lg p-8 slide-in-bottom delay-500 hover-lift">
+          <div className="text-center mt-16 bg-white rounded-xl shadow-lg p-8 slide-in-bottom delay-500 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2">
             <h2
               className="text-3xl font-bold text-gray-800 mb-4 text-glow"
               style={{ fontFamily: "Lobster, cursive" }}
@@ -251,7 +251,7 @@ export default function Products() {
             </p>
             <Link
               to="/contact"
-              className="inline-block bg-red-400 hover:bg-red-500 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover-lift transform shadow-lg hover-glow pulse"
+              className="inline-block bg-red-400 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform shadow-lg hover:bg-red-500 hover:scale-105 hover:-translate-y-2 hover:shadow-xl pulse"
             >
               Contact Us for Custom Orders
             </Link>
@@ -259,7 +259,7 @@ export default function Products() {
 
           {/* Cart Summary (if items in cart) */}
           {getCartItemCount() > 0 && (
-            <div className="fixed bottom-4 right-4 bg-red-400 text-white p-4 rounded-xl shadow-lg slide-in-right hover-scale float">
+            <div className="fixed bottom-4 right-4 bg-red-400 text-white p-4 rounded-xl shadow-lg slide-in-right float transition-all duration-300 hover:bg-red-500 hover:scale-105 hover:-translate-y-1 hover:shadow-xl">
               <div className="flex items-center space-x-3">
                 <span className="text-2xl pulse">🛒</span>
                 <div>
@@ -282,7 +282,7 @@ export default function Products() {
                 </div>
                 <Link
                   to="/cart"
-                  className="bg-white text-red-400 px-3 py-1 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors duration-200 hover-scale"
+                  className="bg-white text-red-400 px-3 py-1 rounded-full text-sm font-semibold transition-all duration-200 hover:bg-gray-100 hover:scale-110"
                 >
                   View Cart
                 </Link>
