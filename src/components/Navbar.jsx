@@ -9,14 +9,14 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-black shadow-lg sticky top-0 z-50 w-full slide-in-top">
+    <nav className=" shadow-lg sticky top-0 z-50 w-full slide-in-top">
       <div className="w-full mx-auto px-10">
         <div className="flex justify-between items-center h-20">
           {/* Logo/Brand */}
           <div className="flex-shrink-0 left-0">
             <Link
               to="/"
-              className="flex items-center text-white hover:text-red-400 transition-colors duration-300 no-underline font-bold text-xl"
+              className="flex items-center text-[#334155] hover:text-red-400 transition-colors duration-300 no-underline font-bold text-xl"
             >
               <span className="text-3xl mr-2">🍰</span>
               <span
@@ -52,7 +52,7 @@ export default function Navbar() {
           </button>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center space-x-8 text-white text-xl">
+          <div className="hidden md:flex items-center space-x-8 text-[#334155] text-xl">
             <Link
               to="/"
               className=" hover:text-red-400 font-medium py-2 px-1 transition-colors duration-300 relative group"
@@ -83,7 +83,7 @@ export default function Navbar() {
             </Link>
             <Link
               to="/cart"
-              className="flex items-center bg-red-400 hover:bg-red-500 text-white font-semibold py-2 px-4 rounded-full transition-all duration-300 hover:-translate-y-0.5 transform"
+              className="flex items-center bg-red-400 hover:bg-red-500 text-[#334155] font-semibold py-2 px-4 rounded-full transition-all duration-300 hover:-translate-y-0.5 transform"
             >
               <span className="text-lg mr-2">🛒</span>
               <span>Cart</span>
@@ -97,7 +97,7 @@ export default function Navbar() {
             isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="px-4 pt-2 pb-4 space-y-1 bg-gray-800 rounded-2xl border-gray-200 text-white">
+          <div className="px-4 pt-2 pb-4 space-y-1 bg-gray-800 rounded-2xl border-gray-200 text-[#334155]">
             <Link
               to="/"
               className="block px-3 py-2  hover:text-red-400 hover:bg-gray-700 rounded-md font-medium transition-colors duration-300"
@@ -128,7 +128,7 @@ export default function Navbar() {
             </Link>
             <Link
               to="/cart"
-              className="flex items-center justify-center mx-3 mt-4 bg-red-400 hover:bg-red-500 text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300"
+              className="flex items-center justify-center mx-3 mt-4 bg-red-400 hover:bg-red-500 text-[#334155] font-semibold py-2 px-4 rounded-full transition-colors duration-300"
               onClick={() => setIsMenuOpen(false)}
             >
               <span className="text-lg mr-2">🛒</span>

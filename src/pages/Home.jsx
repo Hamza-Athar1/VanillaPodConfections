@@ -154,6 +154,118 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Review Section */}
+        <div className="py-16 bg-gradient-to-br from-orange-50 to-pink-50">
+          <div className="max-w-6xl mx-auto px-4">
+            <h2
+              className="text-4xl font-bold text-center text-gray-800 mb-12 fade-in"
+              style={{ fontFamily: "Lobster, cursive" }}
+            >
+              What Our Customers Say
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Review Card 1 */}
+              <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 slide-in-left hover-lift">
+                <div className="flex items-center mb-4">
+                  <div className="flex text-yellow-400 mb-2">
+                    <span>⭐⭐⭐⭐⭐</span>
+                  </div>
+                  <span className="ml-2 text-sm font-semibold text-gray-600">
+                    5.0
+                  </span>
+                </div>
+                <div className="text-6xl mb-4 text-center">❝</div>
+                <p className="text-gray-700 mb-6 italic leading-relaxed">
+                  "The vanilla bean truffles are absolutely divine! You can
+                  taste the quality of the Madagascar vanilla in every bite.
+                  These aren't just confections - they're little pieces of
+                  heaven."
+                </p>
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-pink-200 to-red-200 rounded-full flex items-center justify-center text-xl">
+                    👩‍💼
+                  </div>
+                  <div className="ml-3">
+                    <h4 className="font-semibold text-gray-800">
+                      Sarah Johnson
+                    </h4>
+                    <p className="text-sm text-gray-500">Food Blogger</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Review Card 2 */}
+              <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 scale-in delay-200 hover-lift">
+                <div className="flex items-center mb-4">
+                  <div className="flex text-yellow-400 mb-2">
+                    <span>⭐⭐⭐⭐⭐</span>
+                  </div>
+                  <span className="ml-2 text-sm font-semibold text-gray-600">
+                    5.0
+                  </span>
+                </div>
+                <div className="text-6xl mb-4 text-center">❝</div>
+                <p className="text-gray-700 mb-6 italic leading-relaxed">
+                  "I ordered custom cupcakes for my wedding and they were the
+                  highlight of the dessert table. Beautiful presentation and the
+                  most incredible vanilla flavor I've ever experienced!"
+                </p>
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full flex items-center justify-center text-xl">
+                    👰
+                  </div>
+                  <div className="ml-3">
+                    <h4 className="font-semibold text-gray-800">Emily Chen</h4>
+                    <p className="text-sm text-gray-500">Bride & Mother</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Review Card 3 */}
+              <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 slide-in-right delay-400 hover-lift">
+                <div className="flex items-center mb-4">
+                  <div className="flex text-yellow-400 mb-2">
+                    <span>⭐⭐⭐⭐⭐</span>
+                  </div>
+                  <span className="ml-2 text-sm font-semibold text-gray-600">
+                    5.0
+                  </span>
+                </div>
+                <div className="text-6xl mb-4 text-center">❝</div>
+                <p className="text-gray-700 mb-6 italic leading-relaxed">
+                  "As a pastry chef myself, I can appreciate true craftsmanship
+                  when I taste it. VanillaPod's attention to detail and use of
+                  premium ingredients is exceptional. Simply outstanding!"
+                </p>
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-yellow-200 to-orange-200 rounded-full flex items-center justify-center text-xl">
+                    👨‍🍳
+                  </div>
+                  <div className="ml-3">
+                    <h4 className="font-semibold text-gray-800">
+                      Marcus Rivera
+                    </h4>
+                    <p className="text-sm text-gray-500">
+                      Executive Pastry Chef
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Review Stats */}
+            <div className="mt-12 text-center fade-in delay-600">
+              <div className="inline-flex items-center bg-white rounded-full px-6 py-3 shadow-lg hover-scale">
+                <div className="flex text-yellow-400 mr-3">
+                  <span>⭐⭐⭐⭐⭐</span>
+                </div>
+                <span className="font-bold text-gray-800 mr-2">4.9/5</span>
+                <span className="text-gray-600">from 200+ happy customers</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* About Preview Section */}
         <div className="py-16 bg-gradient-to-br from-gray-50 to-pink-50">
           <div className="max-w-6xl mx-auto px-4">
