@@ -155,113 +155,203 @@ export default function Home() {
         </div>
 
         {/* Review Section */}
-        <div className="py-16 bg-gradient-to-br from-orange-50 to-pink-50">
-          <div className="max-w-6xl mx-auto px-4">
-            <h2
-              className="text-4xl font-bold text-center text-gray-800 mb-12 fade-in"
-              style={{ fontFamily: "Lobster, cursive" }}
-            >
-              What Our Customers Say
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8">
+        <div className="py-20 bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50 relative overflow-hidden">
+          {/* Background Decorative Elements */}
+          <div className="absolute top-10 left-10 text-6xl opacity-10 rotate-12">
+            🍰
+          </div>
+          <div className="absolute top-20 right-20 text-4xl opacity-10 -rotate-12">
+            🧁
+          </div>
+          <div className="absolute bottom-20 left-20 text-5xl opacity-10 rotate-45">
+            🍪
+          </div>
+          <div className="absolute bottom-10 right-10 text-3xl opacity-10 -rotate-45">
+            🍫
+          </div>
+
+          <div className="max-w-7xl mx-auto px-4 relative z-10">
+            {/* Section Header */}
+            <div className="text-center mb-16">
+              <h2
+                className="text-5xl md:text-6xl font-bold text-gray-800 mb-4 fade-in"
+                style={{ fontFamily: "Lobster, cursive" }}
+              >
+                What Our Customers Say
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto fade-in delay-200">
+                Don't just take our word for it - hear from our delighted
+                customers who have experienced the magic of our handcrafted
+                confections
+              </p>
+              <div className="mt-6 flex justify-center items-center space-x-2 fade-in delay-300">
+                <div className="flex text-yellow-400 text-2xl">
+                  <span>⭐⭐⭐⭐⭐</span>
+                </div>
+                <span className="text-lg font-bold text-gray-800">4.9/5</span>
+                <span className="text-gray-600">• 200+ Reviews</span>
+              </div>
+            </div>
+
+            {/* Reviews Grid */}
+            <div className="grid lg:grid-cols-3 gap-8 mb-16">
               {/* Review Card 1 */}
-              <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 slide-in-left hover-lift">
-                <div className="flex items-center mb-4">
-                  <div className="flex text-yellow-400 mb-2">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 slide-in-left hover-lift border border-white/20 relative group">
+                <div className="absolute -top-4 -right-4 bg-red-400 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">
+                  🏆
+                </div>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex text-yellow-400 text-xl">
                     <span>⭐⭐⭐⭐⭐</span>
                   </div>
-                  <span className="ml-2 text-sm font-semibold text-gray-600">
-                    5.0
+                  <span className="text-sm font-bold bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full">
+                    5.0 ★
                   </span>
                 </div>
-                <div className="text-6xl mb-4 text-center">❝</div>
-                <p className="text-gray-700 mb-6 italic leading-relaxed">
-                  "The vanilla bean truffles are absolutely divine! You can
-                  taste the quality of the Madagascar vanilla in every bite.
-                  These aren't just confections - they're little pieces of
-                  heaven."
-                </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-pink-200 to-red-200 rounded-full flex items-center justify-center text-xl">
+                <div className="relative mb-6">
+                  <div className="text-red-400 text-4xl absolute -top-2 -left-2 opacity-30">
+                    ❝
+                  </div>
+                  <p className="text-gray-700 text-lg leading-relaxed italic pl-6">
+                    The vanilla bean truffles are absolutely divine! You can
+                    taste the quality of the Madagascar vanilla in every bite.
+                    These aren't just confections - they're little pieces of
+                    heaven.
+                  </p>
+                </div>
+                <div className="flex items-center mt-8 pt-6 border-t border-gray-100">
+                  <div className="w-14 h-14 bg-gradient-to-br from-pink-300 to-red-300 rounded-full flex items-center justify-center text-2xl shadow-lg">
                     👩‍💼
                   </div>
-                  <div className="ml-3">
-                    <h4 className="font-semibold text-gray-800">
+                  <div className="ml-4">
+                    <h4 className="font-bold text-gray-800 text-lg">
                       Sarah Johnson
                     </h4>
-                    <p className="text-sm text-gray-500">Food Blogger</p>
+                    <p className="text-red-400 font-medium">Food Blogger</p>
+                    <p className="text-xs text-gray-500 mt-1">
+                      Verified Purchase
+                    </p>
                   </div>
                 </div>
               </div>
 
               {/* Review Card 2 */}
-              <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 scale-in delay-200 hover-lift">
-                <div className="flex items-center mb-4">
-                  <div className="flex text-yellow-400 mb-2">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 scale-in delay-200 hover-lift border border-white/20 relative group lg:-mt-8">
+                <div className="absolute -top-4 -right-4 bg-purple-400 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">
+                  💎
+                </div>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex text-yellow-400 text-xl">
                     <span>⭐⭐⭐⭐⭐</span>
                   </div>
-                  <span className="ml-2 text-sm font-semibold text-gray-600">
-                    5.0
+                  <span className="text-sm font-bold bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full">
+                    5.0 ★
                   </span>
                 </div>
-                <div className="text-6xl mb-4 text-center">❝</div>
-                <p className="text-gray-700 mb-6 italic leading-relaxed">
-                  "I ordered custom cupcakes for my wedding and they were the
-                  highlight of the dessert table. Beautiful presentation and the
-                  most incredible vanilla flavor I've ever experienced!"
-                </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full flex items-center justify-center text-xl">
+                <div className="relative mb-6">
+                  <div className="text-purple-400 text-4xl absolute -top-2 -left-2 opacity-30">
+                    ❝
+                  </div>
+                  <p className="text-gray-700 text-lg leading-relaxed italic pl-6">
+                    I ordered custom cupcakes for my wedding and they were the
+                    highlight of the dessert table. Beautiful presentation and
+                    the most incredible vanilla flavor I've ever experienced!
+                  </p>
+                </div>
+                <div className="flex items-center mt-8 pt-6 border-t border-gray-100">
+                  <div className="w-14 h-14 bg-gradient-to-br from-purple-300 to-pink-300 rounded-full flex items-center justify-center text-2xl shadow-lg">
                     👰
                   </div>
-                  <div className="ml-3">
-                    <h4 className="font-semibold text-gray-800">Emily Chen</h4>
-                    <p className="text-sm text-gray-500">Bride & Mother</p>
+                  <div className="ml-4">
+                    <h4 className="font-bold text-gray-800 text-lg">
+                      Emily Chen
+                    </h4>
+                    <p className="text-purple-400 font-medium">
+                      Bride & Mother
+                    </p>
+                    <p className="text-xs text-gray-500 mt-1">Custom Order</p>
                   </div>
                 </div>
               </div>
 
               {/* Review Card 3 */}
-              <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 slide-in-right delay-400 hover-lift">
-                <div className="flex items-center mb-4">
-                  <div className="flex text-yellow-400 mb-2">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 slide-in-right delay-400 hover-lift border border-white/20 relative group">
+                <div className="absolute -top-4 -right-4 bg-orange-400 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">
+                  👨‍🍳
+                </div>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex text-yellow-400 text-xl">
                     <span>⭐⭐⭐⭐⭐</span>
                   </div>
-                  <span className="ml-2 text-sm font-semibold text-gray-600">
-                    5.0
+                  <span className="text-sm font-bold bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full">
+                    5.0 ★
                   </span>
                 </div>
-                <div className="text-6xl mb-4 text-center">❝</div>
-                <p className="text-gray-700 mb-6 italic leading-relaxed">
-                  "As a pastry chef myself, I can appreciate true craftsmanship
-                  when I taste it. VanillaPod's attention to detail and use of
-                  premium ingredients is exceptional. Simply outstanding!"
-                </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-yellow-200 to-orange-200 rounded-full flex items-center justify-center text-xl">
+                <div className="relative mb-6">
+                  <div className="text-orange-400 text-4xl absolute -top-2 -left-2 opacity-30">
+                    ❝
+                  </div>
+                  <p className="text-gray-700 text-lg leading-relaxed italic pl-6">
+                    As a pastry chef myself, I can appreciate true craftsmanship
+                    when I taste it. VanillaPod's attention to detail and use of
+                    premium ingredients is exceptional. Simply outstanding!
+                  </p>
+                </div>
+                <div className="flex items-center mt-8 pt-6 border-t border-gray-100">
+                  <div className="w-14 h-14 bg-gradient-to-br from-yellow-300 to-orange-300 rounded-full flex items-center justify-center text-2xl shadow-lg">
                     👨‍🍳
                   </div>
-                  <div className="ml-3">
-                    <h4 className="font-semibold text-gray-800">
+                  <div className="ml-4">
+                    <h4 className="font-bold text-gray-800 text-lg">
                       Marcus Rivera
                     </h4>
-                    <p className="text-sm text-gray-500">
+                    <p className="text-orange-400 font-medium">
                       Executive Pastry Chef
+                    </p>
+                    <p className="text-xs text-gray-500 mt-1">
+                      Industry Expert
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Review Stats */}
-            <div className="mt-12 text-center fade-in delay-600">
-              <div className="inline-flex items-center bg-white rounded-full px-6 py-3 shadow-lg hover-scale">
-                <div className="flex text-yellow-400 mr-3">
-                  <span>⭐⭐⭐⭐⭐</span>
-                </div>
-                <span className="font-bold text-gray-800 mr-2">4.9/5</span>
-                <span className="text-gray-600">from 200+ happy customers</span>
+            {/* Trust Indicators */}
+            <div className="grid md:grid-cols-4 gap-6 mb-12">
+              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-6 hover-scale fade-in delay-500">
+                <div className="text-3xl mb-2">📦</div>
+                <div className="text-2xl font-bold text-gray-800">500+</div>
+                <div className="text-sm text-gray-600">Orders Delivered</div>
               </div>
+              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-6 hover-scale fade-in delay-600">
+                <div className="text-3xl mb-2">😊</div>
+                <div className="text-2xl font-bold text-gray-800">98%</div>
+                <div className="text-sm text-gray-600">Happy Customers</div>
+              </div>
+              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-6 hover-scale fade-in delay-700">
+                <div className="text-3xl mb-2">🏅</div>
+                <div className="text-2xl font-bold text-gray-800">4.9/5</div>
+                <div className="text-sm text-gray-600">Average Rating</div>
+              </div>
+              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-6 hover-scale fade-in delay-800">
+                <div className="text-3xl mb-2">🔄</div>
+                <div className="text-2xl font-bold text-gray-800">95%</div>
+                <div className="text-sm text-gray-600">Repeat Customers</div>
+              </div>
+            </div>
+
+            {/* Call to Action */}
+            <div className="text-center fade-in delay-900">
+              <p className="text-lg text-gray-600 mb-6">
+                Join hundreds of satisfied customers who trust VanillaPod for
+                their sweetest moments
+              </p>
+              <Link
+                to="/products"
+                className="inline-block bg-gradient-to-r from-red-400 to-pink-400 hover:from-red-500 hover:to-pink-500 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 hover-lift shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              >
+                Experience Our Confections Today
+              </Link>
             </div>
           </div>
         </div>
