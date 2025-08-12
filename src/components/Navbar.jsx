@@ -83,7 +83,7 @@ export default function Navbar() {
             </Link>
             <Link
               to="/cart"
-              className="flex items-center bg-red-400 hover:bg-red-500 text-[#334155] font-semibold py-2 px-4 rounded-full transition-all duration-300 hover:-translate-y-0.5 transform"
+              className="flex items-center bg-red-400 hover:bg-red-500 text-white font-semibold py-2 px-4 rounded-full transition-all duration-300 hover:-translate-y-0.5 transform hover:text-gray-100"
             >
               <span className="text-lg mr-2">🛒</span>
               <span>Cart</span>

@@ -88,16 +88,18 @@ export default function Home() {
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               {/* Product Card 1 */}
-              <div className="bg-gradient-to-br from-pink-50 to-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 bounce-in hover:scale-105 hover-glow">
-                <div className="text-6xl text-center mb-4 pulse">🍫</div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2 text-center">
+              <div className="bg-gradient-to-br from-pink-50 to-white rounded-xl shadow-lg transition-all duration-300 p-6 bounce-in group hover:shadow-xl hover:scale-105 hover:-translate-y-2 hover:bg-gradient-to-br hover:from-pink-100 hover:to-white">
+                <div className="text-6xl text-center mb-4 pulse group-hover:scale-110 transition-transform duration-300">
+                  🍫
+                </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-2 text-center group-hover:text-red-500 transition-colors duration-300">
                   Vanilla Bean Truffles
                 </h3>
-                <p className="text-gray-600 text-center mb-4">
+                <p className="text-gray-600 text-center mb-4 group-hover:text-gray-700 transition-colors duration-300">
                   Rich, creamy truffles infused with Madagascar vanilla beans
                 </p>
                 <div className="text-center">
-                  <span className="text-2xl font-bold text-red-400">
+                  <span className="text-2xl font-bold text-red-400 group-hover:text-red-500 transition-colors duration-300">
                     $24.99
                   </span>
                 </div>
@@ -105,23 +107,23 @@ export default function Home() {
 
               {/* Product Card 2 */}
               <div
-                className="bg-gradient-to-br from-orange-50 to-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 bounce-in hover:scale-105 hover-glow"
+                className="bg-gradient-to-br from-orange-50 to-white rounded-xl shadow-lg transition-all duration-300 p-6 bounce-in group hover:shadow-xl hover:scale-105 hover:-translate-y-2 hover:bg-gradient-to-br hover:from-orange-100 hover:to-white"
                 style={{ animationDelay: "0.2s" }}
               >
                 <div
-                  className="text-6xl text-center mb-4 pulse"
+                  className="text-6xl text-center mb-4 pulse group-hover:scale-110 transition-transform duration-300"
                   style={{ animationDelay: "0.3s" }}
                 >
                   🧁
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2 text-center">
+                <h3 className="text-xl font-bold text-gray-800 mb-2 text-center group-hover:text-red-500 transition-colors duration-300">
                   Vanilla Cupcakes
                 </h3>
-                <p className="text-gray-600 text-center mb-4">
+                <p className="text-gray-600 text-center mb-4 group-hover:text-gray-700 transition-colors duration-300">
                   Fluffy vanilla cupcakes with silky buttercream frosting
                 </p>
                 <div className="text-center">
-                  <span className="text-2xl font-bold text-red-400">
+                  <span className="text-2xl font-bold text-red-400 group-hover:text-red-500 transition-colors duration-300">
                     $18.99
                   </span>
                 </div>
@@ -129,23 +131,23 @@ export default function Home() {
 
               {/* Product Card 3 */}
               <div
-                className="bg-gradient-to-br from-yellow-50 to-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 bounce-in hover:scale-105 hover-glow"
+                className="bg-gradient-to-br from-yellow-50 to-white rounded-xl shadow-lg transition-all duration-300 p-6 bounce-in group hover:shadow-xl hover:scale-105 hover:-translate-y-2 hover:bg-gradient-to-br hover:from-yellow-100 hover:to-white"
                 style={{ animationDelay: "0.4s" }}
               >
                 <div
-                  className="text-6xl text-center mb-4 pulse"
+                  className="text-6xl text-center mb-4 pulse group-hover:scale-110 transition-transform duration-300"
                   style={{ animationDelay: "0.5s" }}
                 >
                   🍪
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2 text-center">
+                <h3 className="text-xl font-bold text-gray-800 mb-2 text-center group-hover:text-red-500 transition-colors duration-300">
                   Vanilla Cookies
                 </h3>
-                <p className="text-gray-600 text-center mb-4">
+                <p className="text-gray-600 text-center mb-4 group-hover:text-gray-700 transition-colors duration-300">
                   Crispy vanilla cookies with a hint of sea salt
                 </p>
                 <div className="text-center">
-                  <span className="text-2xl font-bold text-red-400">
+                  <span className="text-2xl font-bold text-red-400 group-hover:text-red-500 transition-colors duration-300">
                     $12.99
                   </span>
                 </div>
@@ -196,39 +198,41 @@ export default function Home() {
             {/* Reviews Grid */}
             <div className="grid lg:grid-cols-3 gap-8 mb-16">
               {/* Review Card 1 */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 slide-in-left hover-lift border border-white/20 relative group">
-                <div className="absolute -top-4 -right-4 bg-red-400 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl transition-all duration-500 p-8 slide-in-left border border-white/20 relative group hover:shadow-2xl hover:scale-105 hover:-translate-y-3 hover:bg-white/90">
+                <div className="absolute -top-4 -right-4 bg-red-400 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 group-hover:bg-red-500">
                   🏆
                 </div>
                 <div className="flex items-center justify-between mb-6">
-                  <div className="flex text-yellow-400 text-xl">
+                  <div className="flex text-yellow-400 text-xl group-hover:scale-110 transition-transform duration-300">
                     <span>⭐⭐⭐⭐⭐</span>
                   </div>
-                  <span className="text-sm font-bold bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full">
+                  <span className="text-sm font-bold bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full group-hover:bg-yellow-200 transition-colors duration-300">
                     5.0 ★
                   </span>
                 </div>
                 <div className="relative mb-6">
-                  <div className="text-red-400 text-4xl absolute -top-2 -left-2 opacity-30">
+                  <div className="text-red-400 text-4xl absolute -top-2 -left-2 opacity-30 group-hover:opacity-50 group-hover:scale-110 transition-all duration-300">
                     ❝
                   </div>
-                  <p className="text-gray-700 text-lg leading-relaxed italic pl-6">
+                  <p className="text-gray-700 text-lg leading-relaxed italic pl-6 group-hover:text-gray-800 transition-colors duration-300">
                     The vanilla bean truffles are absolutely divine! You can
                     taste the quality of the Madagascar vanilla in every bite.
                     These aren't just confections - they're little pieces of
                     heaven.
                   </p>
                 </div>
-                <div className="flex items-center mt-8 pt-6 border-t border-gray-100">
-                  <div className="w-14 h-14 bg-gradient-to-br from-pink-300 to-red-300 rounded-full flex items-center justify-center text-2xl shadow-lg">
+                <div className="flex items-center mt-8 pt-6 border-t border-gray-100 group-hover:border-gray-200 transition-colors duration-300">
+                  <div className="w-14 h-14 bg-gradient-to-br from-pink-300 to-red-300 rounded-full flex items-center justify-center text-2xl shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300">
                     👩‍💼
                   </div>
                   <div className="ml-4">
-                    <h4 className="font-bold text-gray-800 text-lg">
+                    <h4 className="font-bold text-gray-800 text-lg group-hover:text-red-500 transition-colors duration-300">
                       Sarah Johnson
                     </h4>
-                    <p className="text-red-400 font-medium">Food Blogger</p>
-                    <p className="text-xs text-gray-500 mt-1">
+                    <p className="text-red-400 font-medium group-hover:text-red-500 transition-colors duration-300">
+                      Food Blogger
+                    </p>
+                    <p className="text-xs text-gray-500 mt-1 group-hover:text-gray-600 transition-colors duration-300">
                       Verified Purchase
                     </p>
                   </div>
@@ -236,79 +240,81 @@ export default function Home() {
               </div>
 
               {/* Review Card 2 */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 scale-in delay-200 hover-lift border border-white/20 relative group lg:-mt-8">
-                <div className="absolute -top-4 -right-4 bg-purple-400 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl transition-all duration-500 p-8 scale-in delay-200 border border-white/20 relative group lg:-mt-8 hover:shadow-2xl hover:scale-105 hover:-translate-y-3 hover:bg-white/90">
+                <div className="absolute -top-4 -right-4 bg-purple-400 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 group-hover:bg-purple-500">
                   💎
                 </div>
                 <div className="flex items-center justify-between mb-6">
-                  <div className="flex text-yellow-400 text-xl">
+                  <div className="flex text-yellow-400 text-xl group-hover:scale-110 transition-transform duration-300">
                     <span>⭐⭐⭐⭐⭐</span>
                   </div>
-                  <span className="text-sm font-bold bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full">
+                  <span className="text-sm font-bold bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full group-hover:bg-yellow-200 transition-colors duration-300">
                     5.0 ★
                   </span>
                 </div>
                 <div className="relative mb-6">
-                  <div className="text-purple-400 text-4xl absolute -top-2 -left-2 opacity-30">
+                  <div className="text-purple-400 text-4xl absolute -top-2 -left-2 opacity-30 group-hover:opacity-50 group-hover:scale-110 transition-all duration-300">
                     ❝
                   </div>
-                  <p className="text-gray-700 text-lg leading-relaxed italic pl-6">
+                  <p className="text-gray-700 text-lg leading-relaxed italic pl-6 group-hover:text-gray-800 transition-colors duration-300">
                     I ordered custom cupcakes for my wedding and they were the
                     highlight of the dessert table. Beautiful presentation and
                     the most incredible vanilla flavor I've ever experienced!
                   </p>
                 </div>
-                <div className="flex items-center mt-8 pt-6 border-t border-gray-100">
-                  <div className="w-14 h-14 bg-gradient-to-br from-purple-300 to-pink-300 rounded-full flex items-center justify-center text-2xl shadow-lg">
+                <div className="flex items-center mt-8 pt-6 border-t border-gray-100 group-hover:border-gray-200 transition-colors duration-300">
+                  <div className="w-14 h-14 bg-gradient-to-br from-purple-300 to-pink-300 rounded-full flex items-center justify-center text-2xl shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300">
                     👰
                   </div>
                   <div className="ml-4">
-                    <h4 className="font-bold text-gray-800 text-lg">
+                    <h4 className="font-bold text-gray-800 text-lg group-hover:text-purple-500 transition-colors duration-300">
                       Emily Chen
                     </h4>
-                    <p className="text-purple-400 font-medium">
+                    <p className="text-purple-400 font-medium group-hover:text-purple-500 transition-colors duration-300">
                       Bride & Mother
                     </p>
-                    <p className="text-xs text-gray-500 mt-1">Custom Order</p>
+                    <p className="text-xs text-gray-500 mt-1 group-hover:text-gray-600 transition-colors duration-300">
+                      Custom Order
+                    </p>
                   </div>
                 </div>
               </div>
 
               {/* Review Card 3 */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 slide-in-right delay-400 hover-lift border border-white/20 relative group">
-                <div className="absolute -top-4 -right-4 bg-orange-400 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl transition-all duration-500 p-8 slide-in-right delay-400 border border-white/20 relative group hover:shadow-2xl hover:scale-105 hover:-translate-y-3 hover:bg-white/90">
+                <div className="absolute -top-4 -right-4 bg-orange-400 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 group-hover:bg-orange-500">
                   👨‍🍳
                 </div>
                 <div className="flex items-center justify-between mb-6">
-                  <div className="flex text-yellow-400 text-xl">
+                  <div className="flex text-yellow-400 text-xl group-hover:scale-110 transition-transform duration-300">
                     <span>⭐⭐⭐⭐⭐</span>
                   </div>
-                  <span className="text-sm font-bold bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full">
+                  <span className="text-sm font-bold bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full group-hover:bg-yellow-200 transition-colors duration-300">
                     5.0 ★
                   </span>
                 </div>
                 <div className="relative mb-6">
-                  <div className="text-orange-400 text-4xl absolute -top-2 -left-2 opacity-30">
+                  <div className="text-orange-400 text-4xl absolute -top-2 -left-2 opacity-30 group-hover:opacity-50 group-hover:scale-110 transition-all duration-300">
                     ❝
                   </div>
-                  <p className="text-gray-700 text-lg leading-relaxed italic pl-6">
+                  <p className="text-gray-700 text-lg leading-relaxed italic pl-6 group-hover:text-gray-800 transition-colors duration-300">
                     As a pastry chef myself, I can appreciate true craftsmanship
                     when I taste it. VanillaPod's attention to detail and use of
                     premium ingredients is exceptional. Simply outstanding!
                   </p>
                 </div>
-                <div className="flex items-center mt-8 pt-6 border-t border-gray-100">
-                  <div className="w-14 h-14 bg-gradient-to-br from-yellow-300 to-orange-300 rounded-full flex items-center justify-center text-2xl shadow-lg">
+                <div className="flex items-center mt-8 pt-6 border-t border-gray-100 group-hover:border-gray-200 transition-colors duration-300">
+                  <div className="w-14 h-14 bg-gradient-to-br from-yellow-300 to-orange-300 rounded-full flex items-center justify-center text-2xl shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300">
                     👨‍🍳
                   </div>
                   <div className="ml-4">
-                    <h4 className="font-bold text-gray-800 text-lg">
+                    <h4 className="font-bold text-gray-800 text-lg group-hover:text-orange-500 transition-colors duration-300">
                       Marcus Rivera
                     </h4>
-                    <p className="text-orange-400 font-medium">
+                    <p className="text-orange-400 font-medium group-hover:text-orange-500 transition-colors duration-300">
                       Executive Pastry Chef
                     </p>
-                    <p className="text-xs text-gray-500 mt-1">
+                    <p className="text-xs text-gray-500 mt-1 group-hover:text-gray-600 transition-colors duration-300">
                       Industry Expert
                     </p>
                   </div>
@@ -318,25 +324,49 @@ export default function Home() {
 
             {/* Trust Indicators */}
             <div className="grid md:grid-cols-4 gap-6 mb-12">
-              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-6 hover-scale fade-in delay-500">
-                <div className="text-3xl mb-2">📦</div>
-                <div className="text-2xl font-bold text-gray-800">500+</div>
-                <div className="text-sm text-gray-600">Orders Delivered</div>
+              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-6 fade-in delay-500 group transition-all duration-300 hover:bg-white/70 hover:scale-105 hover:-translate-y-2 hover:shadow-lg">
+                <div className="text-3xl mb-2 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
+                  📦
+                </div>
+                <div className="text-2xl font-bold text-gray-800 group-hover:text-red-500 transition-colors duration-300">
+                  500+
+                </div>
+                <div className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
+                  Orders Delivered
+                </div>
               </div>
-              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-6 hover-scale fade-in delay-600">
-                <div className="text-3xl mb-2">😊</div>
-                <div className="text-2xl font-bold text-gray-800">98%</div>
-                <div className="text-sm text-gray-600">Happy Customers</div>
+              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-6 fade-in delay-600 group transition-all duration-300 hover:bg-white/70 hover:scale-105 hover:-translate-y-2 hover:shadow-lg">
+                <div className="text-3xl mb-2 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
+                  😊
+                </div>
+                <div className="text-2xl font-bold text-gray-800 group-hover:text-red-500 transition-colors duration-300">
+                  98%
+                </div>
+                <div className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
+                  Happy Customers
+                </div>
               </div>
-              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-6 hover-scale fade-in delay-700">
-                <div className="text-3xl mb-2">🏅</div>
-                <div className="text-2xl font-bold text-gray-800">4.9/5</div>
-                <div className="text-sm text-gray-600">Average Rating</div>
+              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-6 fade-in delay-700 group transition-all duration-300 hover:bg-white/70 hover:scale-105 hover:-translate-y-2 hover:shadow-lg">
+                <div className="text-3xl mb-2 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
+                  🏅
+                </div>
+                <div className="text-2xl font-bold text-gray-800 group-hover:text-red-500 transition-colors duration-300">
+                  4.9/5
+                </div>
+                <div className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
+                  Average Rating
+                </div>
               </div>
-              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-6 hover-scale fade-in delay-800">
-                <div className="text-3xl mb-2">🔄</div>
-                <div className="text-2xl font-bold text-gray-800">95%</div>
-                <div className="text-sm text-gray-600">Repeat Customers</div>
+              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-6 fade-in delay-800 group transition-all duration-300 hover:bg-white/70 hover:scale-105 hover:-translate-y-2 hover:shadow-lg">
+                <div className="text-3xl mb-2 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
+                  🔄
+                </div>
+                <div className="text-2xl font-bold text-gray-800 group-hover:text-red-500 transition-colors duration-300">
+                  95%
+                </div>
+                <div className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
+                  Repeat Customers
+                </div>
               </div>
             </div>
 
@@ -348,7 +378,7 @@ export default function Home() {
               </p>
               <Link
                 to="/products"
-                className="inline-block bg-gradient-to-r from-red-400 to-pink-400 hover:from-red-500 hover:to-pink-500 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 hover-lift shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="inline-block bg-gradient-to-r from-red-400 to-pink-400 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 shadow-lg transform hover:from-red-500 hover:to-pink-500 hover:shadow-xl hover:-translate-y-2 hover:scale-105"
               >
                 Experience Our Confections Today
               </Link>
