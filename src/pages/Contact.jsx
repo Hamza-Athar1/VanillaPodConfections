@@ -198,7 +198,7 @@ export default function Contact() {
                     <div>
                       <h4 className="font-semibold text-gray-800">Address</h4>
                       <p className="text-gray-600">
-                        123 Sweet Street, Confection City, CC 12345
+                        17432 9 Ave SW, Edmonton AB T6W 2X4
                       </p>
                     </div>
                   </div>
@@ -206,7 +206,7 @@ export default function Contact() {
                     <div className="text-2xl mr-4 pulse">📞</div>
                     <div>
                       <h4 className="font-semibold text-gray-800">Phone</h4>
-                      <p className="text-gray-600">(555) 123-SWEET</p>
+                      <p className="text-gray-600">(+1) 780-863-2152</p>
                     </div>
                   </div>
                   <div className="flex items-center fade-in delay-700 hover-scale">
