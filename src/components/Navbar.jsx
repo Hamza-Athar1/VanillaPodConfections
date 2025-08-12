@@ -9,11 +9,11 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-black shadow-lg sticky top-0 z-50 w-full">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
+    <nav className="bg-black shadow-lg sticky top-0 z-50 w-full slide-in-top">
+      <div className="w-full mx-auto px-10">
+        <div className="flex justify-between items-center h-20">
           {/* Logo/Brand */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 left-0">
             <Link
               to="/"
               className="flex items-center text-white hover:text-red-400 transition-colors duration-300 no-underline font-bold text-xl"
@@ -21,7 +21,7 @@ export default function Navbar() {
               <span className="text-3xl mr-2">🍰</span>
               <span
                 className="font-bold text-2xl hidden sm:block"
-                style={{ fontFamily: "Lobster, cursive" }}
+                style={{ fontFamily: "Lobster, cursive", fontSize: "2rem" }}
               >
                 Vanilla Pod Confections
               </span>
@@ -52,10 +52,7 @@ export default function Navbar() {
           </button>
 
           {/* Desktop Navigation Links */}
-          <div
-            className="hidden md:flex items-center space-x-8 text-white"
-            style={{ fontFamily: "Source Sans 3, sans" }}
-          >
+          <div className="hidden md:flex items-center space-x-8 text-white text-xl">
             <Link
               to="/"
               className=" hover:text-red-400 font-medium py-2 px-1 transition-colors duration-300 relative group"

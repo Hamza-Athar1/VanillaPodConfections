@@ -174,7 +174,7 @@ export default function Home() {
                 </p>
                 <Link
                   to="/about"
-                  className="bg-red-400 hover:bg-red-500 text-white font-semibold py-2 px-6 rounded-full transition-colors duration-300 hover-lift shimmer"
+                  className="bg-red-400 hover:bg-red-500 text-gray-500 font-semibold py-2 px-6 rounded-full transition-colors duration-300 hover-lift shimmer"
                 >
                   Read More
                 </Link>
