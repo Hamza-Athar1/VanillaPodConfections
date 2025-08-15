@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import FC from "../assets/FeaturedConfection.png";
 import SEO from "../components/SEO";
 
 export default function Home() {
@@ -60,17 +61,13 @@ export default function Home() {
 
               {/* Hero Image Section */}
               <div className=" hidden items-center justify-center lg:justify-end slide-in-right lg:flex">
-                <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/30 w-full max-w-md h-96 flex items-center justify-center float hover-glow">
-                  {/* Placeholder for image */}
-                  <div className="text-center">
-                    <div className="text-8xl mb-4 swing">🍰</div>
-                    <p className="text-gray-600 font-medium fade-in delay-300">
-                      Hero Image Placeholder
-                    </p>
-                    <p className="text-sm text-gray-500 mt-2 fade-in delay-500">
-                      Add your beautiful confection image here
-                    </p>
-                  </div>
+                {/* Placeholder for image */}
+                <div className="text-center">
+                  <img
+                    src={FC}
+                    alt="Featured Confection"
+                    className="w-full h-full object-contain rounded-4xl"
+                  />
                 </div>
               </div>
             </div>

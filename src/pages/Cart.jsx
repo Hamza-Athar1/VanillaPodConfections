@@ -11,33 +11,7 @@ export default function Cart() {
     url: "https://vanillapodconfections.com/cart",
   };
 
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: "Vanilla Bean Truffles",
-      price: 24.99,
-      quantity: 2,
-      emoji: "🍫",
-      description:
-        "Rich, creamy truffles infused with Madagascar vanilla beans",
-    },
-    {
-      id: 2,
-      name: "Vanilla Cupcakes",
-      price: 18.99,
-      quantity: 1,
-      emoji: "🧁",
-      description: "Fluffy vanilla cupcakes with silky buttercream frosting",
-    },
-    {
-      id: 3,
-      name: "Vanilla Cookies",
-      price: 12.99,
-      quantity: 3,
-      emoji: "🍪",
-      description: "Crispy vanilla cookies with a hint of sea salt",
-    },
-  ]);
+  const [cartItems, setCartItems] = useState([]);
 
   const updateQuantity = (id, newQuantity) => {
     if (newQuantity === 0) {
