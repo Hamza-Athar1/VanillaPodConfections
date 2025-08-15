@@ -59,7 +59,7 @@ export default function Home() {
               </div>
 
               {/* Hero Image Section */}
-              <div className=" hidden flex items-center justify-center lg:justify-end slide-in-right lg:flex">
+              <div className=" hidden items-center justify-center lg:justify-end slide-in-right lg:flex">
                 <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/30 w-full max-w-md h-96 flex items-center justify-center float hover-glow">
                   {/* Placeholder for image */}
                   <div className="text-center">
@@ -324,7 +324,7 @@ export default function Home() {
 
             {/* Trust Indicators */}
             <div className="grid md:grid-cols-4 gap-6 mb-12">
-              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-6 fade-in delay-500 group transition-all duration-300 hover:bg-white/70 hover:scale-105 hover:-translate-y-2 hover:shadow-lg">
+              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-6 slide-in-top group transition-all duration-300 hover:bg-white/70 hover:scale-105 hover:-translate-y-2 hover:shadow-lg">
                 <div className="text-3xl mb-2 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
                   📦
                 </div>
@@ -335,7 +335,7 @@ export default function Home() {
                   Orders Delivered
                 </div>
               </div>
-              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-6 fade-in delay-600 group transition-all duration-300 hover:bg-white/70 hover:scale-105 hover:-translate-y-2 hover:shadow-lg">
+              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-6 slide-in-bottom delay-600 group transition-all duration-300 hover:bg-white/70 hover:scale-105 hover:-translate-y-2 hover:shadow-lg">
                 <div className="text-3xl mb-2 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
                   😊
                 </div>
@@ -346,7 +346,7 @@ export default function Home() {
                   Happy Customers
                 </div>
               </div>
-              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-6 fade-in delay-700 group transition-all duration-300 hover:bg-white/70 hover:scale-105 hover:-translate-y-2 hover:shadow-lg">
+              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-6 slide-in-top delay-700 group transition-all duration-300 hover:bg-white/70 hover:scale-105 hover:-translate-y-2 hover:shadow-lg">
                 <div className="text-3xl mb-2 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
                   🏅
                 </div>
@@ -357,7 +357,7 @@ export default function Home() {
                   Average Rating
                 </div>
               </div>
-              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-6 fade-in delay-800 group transition-all duration-300 hover:bg-white/70 hover:scale-105 hover:-translate-y-2 hover:shadow-lg">
+              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-6 slide-in-bottom delay-800 group transition-all duration-300 hover:bg-white/70 hover:scale-105 hover:-translate-y-2 hover:shadow-lg">
                 <div className="text-3xl mb-2 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
                   🔄
                 </div>

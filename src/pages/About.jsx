@@ -155,28 +155,36 @@ export default function About() {
             </h2>
             <div className="grid md:grid-cols-4 gap-6 text-center">
               <div className="fade-in delay-1200 transition-all duration-300 hover:scale-105 hover:-translate-y-1">
-                <div className="text-4xl mb-3 float pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">🌍</div>
+                <div className="text-4xl mb-3 float pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
+                  🌍
+                </div>
                 <h4 className="font-bold mb-2">Source</h4>
                 <p className="text-sm opacity-90">
                   Premium vanilla beans from Madagascar, Tahiti, and Mexico
                 </p>
               </div>
               <div className="fade-in delay-1300 transition-all duration-300 hover:scale-105 hover:-translate-y-1">
-                <div className="text-4xl mb-3 float pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">🧪</div>
+                <div className="text-4xl mb-3 float pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
+                  🧪
+                </div>
                 <h4 className="font-bold mb-2">Extract</h4>
                 <p className="text-sm opacity-90">
                   Traditional extraction methods to capture pure vanilla essence
                 </p>
               </div>
               <div className="fade-in delay-1400 transition-all duration-300 hover:scale-105 hover:-translate-y-1">
-                <div className="text-4xl mb-3 float pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">👨‍🍳</div>
+                <div className="text-4xl mb-3 float pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
+                  👨‍🍳
+                </div>
                 <h4 className="font-bold mb-2">Craft</h4>
                 <p className="text-sm opacity-90">
                   Handcrafted in small batches using time-honored techniques
                 </p>
               </div>
               <div className="fade-in delay-1500 transition-all duration-300 hover:scale-105 hover:-translate-y-1">
-                <div className="text-4xl mb-3 float pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">📦</div>
+                <div className="text-4xl mb-3 float pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
+                  📦
+                </div>
                 <h4 className="font-bold mb-2">Deliver</h4>
                 <p className="text-sm opacity-90">
                   Carefully packaged and delivered fresh to your door

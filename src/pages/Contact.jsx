@@ -193,33 +193,41 @@ export default function Contact() {
                   Contact Information
                 </h2>
                 <div className="space-y-4">
-                  <div className="flex items-center fade-in delay-500 group transition-all duration-300 hover:scale-105 hover:-translate-y-1">
-                    <div className="text-2xl mr-4 pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">📍</div>
+                  <div className="flex items-center fade-in delay-500 group transition-all duration-300 hover:scale-105 hover:-translate-y-1"></div>
+                  <div className="flex items-center fade-in delay-600 group transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+                    <div className="text-2xl mr-4 pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
+                      📞
+                    </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800 group-hover:text-red-500 transition-colors duration-300">Address</h4>
+                      <h4 className="font-semibold text-gray-800 group-hover:text-red-500 transition-colors duration-300">
+                        Phone
+                      </h4>
                       <p className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
-                        17432 9 Ave SW, Edmonton AB T6W 2X4
+                        (+1) 780-863-2152
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-center fade-in delay-600 group transition-all duration-300 hover:scale-105 hover:-translate-y-1">
-                    <div className="text-2xl mr-4 pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">📞</div>
-                    <div>
-                      <h4 className="font-semibold text-gray-800 group-hover:text-red-500 transition-colors duration-300">Phone</h4>
-                      <p className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">(+1) 780-863-2152</p>
-                    </div>
-                  </div>
                   <div className="flex items-center fade-in delay-700 group transition-all duration-300 hover:scale-105 hover:-translate-y-1">
-                    <div className="text-2xl mr-4 pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">✉️</div>
+                    <div className="text-2xl mr-4 pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
+                      ✉️
+                    </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800 group-hover:text-red-500 transition-colors duration-300">Email</h4>
-                      <p className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">hello@vanillapod.com</p>
+                      <h4 className="font-semibold text-gray-800 group-hover:text-red-500 transition-colors duration-300">
+                        Email
+                      </h4>
+                      <p className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
+                        sumaira@vanillapodconfections.ca
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-center fade-in delay-800 group transition-all duration-300 hover:scale-105 hover:-translate-y-1">
-                    <div className="text-2xl mr-4 pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">🕒</div>
+                    <div className="text-2xl mr-4 pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
+                      🕒
+                    </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800 group-hover:text-red-500 transition-colors duration-300">Hours</h4>
+                      <h4 className="font-semibold text-gray-800 group-hover:text-red-500 transition-colors duration-300">
+                        Hours
+                      </h4>
                       <p className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
                         Mon-Sat: 9AM-7PM
                         <br />
