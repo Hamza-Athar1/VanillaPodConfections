@@ -194,22 +194,26 @@ export default function About() {
           </div>
 
           {/* Call to Action */}
-          <div className="text-center bg-white rounded-xl shadow-lg p-8 scale-in delay-1600 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2">
+          <div className="text-center bg-white rounded-xl shadow-lg p-8 scale-in transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2 group">
             <h2
-              className="text-3xl font-bold text-gray-800 mb-4 text-glow fade-in delay-1700"
+              className="text-3xl font-bold text-gray-800 mb-4 text-glow fade-in group-hover:text-red-500 transition-colors duration-300"
               style={{ fontFamily: "Lobster, cursive" }}
             >
               Join Our Sweet Journey
             </h2>
-            <p className="text-lg text-gray-600 mb-6 fade-in delay-1800">
+            <p className="text-lg text-gray-600 mb-6 fade-in group-hover:text-gray-700 transition-colors duration-300">
               Follow us on social media to see behind-the-scenes content and be
               the first to know about new flavors.
             </p>
-            <div className="flex justify-center gap-4">
-              <button className="bg-red-400 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 pulse scale-in delay-1900 hover:bg-red-500 hover:scale-105 hover:-translate-y-1 hover:shadow-lg">
+            <div className="flex justify-center gap-4 flex-wrap">
+              <a
+                href={"https://www.facebook.com/VanillaPodConfections"}
+                target="_blank"
+                className="bg-red-400 text-white font-semibold py-3 px-6 rounded-full transition-all duration-200 pulse scale-in hover:bg-red-500 hover:scale-105 hover:-translate-y-1 hover:shadow-lg transform shadow-md"
+              >
                 Visit Our Shop
-              </button>
-              <button className="border-2 border-red-400 text-red-400 font-semibold py-3 px-6 rounded-full transition-all duration-300 scale-in delay-2000 hover:bg-red-400 hover:text-white hover:scale-105 hover:-translate-y-1">
+              </a>
+              <button className="border-2 border-red-400 text-red-400 font-semibold py-3 px-6 rounded-full transition-all duration-200 scale-in hover:bg-red-400 hover:text-white hover:scale-105 hover:-translate-y-1 hover:shadow-lg transform shadow-md">
                 Contact Us
               </button>
             </div>

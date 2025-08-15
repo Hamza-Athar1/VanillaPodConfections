@@ -35,17 +35,17 @@ export default function Navbar() {
             aria-label="Toggle navigation"
           >
             <span
-              className={`block h-0.5 w-6 bg-white transition-all duration-300 ${
+              className={`block h-0.5 w-6 bg-black transition-all duration-300 ${
                 isMenuOpen ? "rotate-45 translate-y-1.5" : ""
               }`}
             ></span>
             <span
-              className={`block h-0.5 w-6 bg-white transition-all duration-300 my-1 ${
+              className={`block h-0.5 w-6 bg-black transition-all duration-300 my-1 ${
                 isMenuOpen ? "opacity-0" : ""
               }`}
             ></span>
             <span
-              className={`block h-0.5 w-6 bg-white transition-all duration-300 ${
+              className={`block h-0.5 w-6 bg-black transition-all duration-300 ${
                 isMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
               }`}
             ></span>
@@ -97,7 +97,7 @@ export default function Navbar() {
             isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="px-4 pt-2 pb-4 space-y-1 bg-gray-800 rounded-2xl border-gray-200 text-[#334155]">
+          <div className="px-4 pt-2 pb-4 mb-4 space-y-1 bg-gray-800 rounded-2xl border-gray-200 text-white">
             <Link
               to="/"
               className="block px-3 py-2  hover:text-red-400 hover:bg-gray-700 rounded-md font-medium transition-colors duration-300"
@@ -128,7 +128,7 @@ export default function Navbar() {
             </Link>
             <Link
               to="/cart"
-              className="flex items-center justify-center mx-3 mt-4 bg-red-400 hover:bg-red-500 text-[#334155] font-semibold py-2 px-4 rounded-full transition-colors duration-300"
+              className="flex items-center justify-center mx-3 mt-4 bg-red-400 hover:bg-red-500 font-semibold py-2 px-4 rounded-full transition-colors duration-300"
               onClick={() => setIsMenuOpen(false)}
             >
               <span className="text-lg mr-2">🛒</span>

@@ -202,9 +202,12 @@ export default function Contact() {
                       <h4 className="font-semibold text-gray-800 group-hover:text-red-500 transition-colors duration-300">
                         Phone
                       </h4>
-                      <p className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
+                      <a
+                        href="https://wa.me/+17808632152"
+                        className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300"
+                      >
                         (+1) 780-863-2152
-                      </p>
+                      </a>
                     </div>
                   </div>
                   <div className="flex items-center fade-in delay-700 group transition-all duration-300 hover:scale-105 hover:-translate-y-1">
@@ -215,9 +218,12 @@ export default function Contact() {
                       <h4 className="font-semibold text-gray-800 group-hover:text-red-500 transition-colors duration-300">
                         Email
                       </h4>
-                      <p className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
+                      <a
+                        href="mailto:sumaira@vanillapodconfections.ca"
+                        className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300"
+                      >
                         sumaira@vanillapodconfections.ca
-                      </p>
+                      </a>
                     </div>
                   </div>
                   <div className="flex items-center fade-in delay-800 group transition-all duration-300 hover:scale-105 hover:-translate-y-1">
