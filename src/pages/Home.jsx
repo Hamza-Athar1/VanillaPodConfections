@@ -40,12 +40,12 @@ export default function Home() {
                 >
                   Welcome to VanillaPod
                 </h1>
-                <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl lg:max-w-none fade-in delay-200">
+                <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl lg:max-w-none fade-in">
                   Artisanal confections crafted with love, premium vanilla, and
                   the finest ingredients. Experience the magic of handmade
                   sweets that tell a story.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start slide-in-bottom delay-400">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start slide-in-bottom">
                   <Link to="/products">
                     <button className="bg-red-400 hover:bg-red-500 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:-translate-y-1 transform shadow-lg hover-lift">
                       Shop Our Collection
@@ -178,12 +178,12 @@ export default function Home() {
               >
                 What Our Customers Say
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto fade-in delay-200">
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto fade-in">
                 Don't just take our word for it - hear from our delighted
                 customers who have experienced the magic of our handcrafted
                 confections
               </p>
-              <div className="mt-6 flex justify-center items-center space-x-2 fade-in delay-300">
+              <div className="mt-6 flex justify-center items-center space-x-2 fade-in">
                 <div className="flex text-yellow-400 text-2xl">
                   <span>⭐⭐⭐⭐⭐</span>
                 </div>
@@ -237,7 +237,7 @@ export default function Home() {
               </div>
 
               {/* Review Card 2 */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl transition-all duration-500 p-8 scale-in delay-200 border border-white/20 relative group lg:-mt-8 hover:shadow-2xl hover:scale-105 hover:-translate-y-3 hover:bg-white/90">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl transition-all duration-500 p-8 scale-in border border-white/20 relative group lg:-mt-8 hover:shadow-2xl hover:scale-105 hover:-translate-y-3 hover:bg-white/90">
                 <div className="absolute -top-4 -right-4 bg-purple-400 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 group-hover:bg-purple-500">
                   💎
                 </div>
@@ -278,7 +278,7 @@ export default function Home() {
               </div>
 
               {/* Review Card 3 */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl transition-all duration-500 p-8 slide-in-right delay-400 border border-white/20 relative group hover:shadow-2xl hover:scale-105 hover:-translate-y-3 hover:bg-white/90">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl transition-all duration-500 p-8 slide-in-right border border-white/20 relative group hover:shadow-2xl hover:scale-105 hover:-translate-y-3 hover:bg-white/90">
                 <div className="absolute -top-4 -right-4 bg-orange-400 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 group-hover:bg-orange-500">
                   👨‍🍳
                 </div>
@@ -332,7 +332,7 @@ export default function Home() {
                   Orders Delivered
                 </div>
               </div>
-              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-6 slide-in-bottom delay-600 group transition-all duration-300 hover:bg-white/70 hover:scale-105 hover:-translate-y-2 hover:shadow-lg">
+              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-6 slide-in-bottom group transition-all duration-300 hover:bg-white/70 hover:scale-105 hover:-translate-y-2 hover:shadow-lg">
                 <div className="text-3xl mb-2 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
                   😊
                 </div>
@@ -343,7 +343,7 @@ export default function Home() {
                   Happy Customers
                 </div>
               </div>
-              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-6 slide-in-top delay-700 group transition-all duration-300 hover:bg-white/70 hover:scale-105 hover:-translate-y-2 hover:shadow-lg">
+              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-6 slide-in-top group transition-all duration-300 hover:bg-white/70 hover:scale-105 hover:-translate-y-2 hover:shadow-lg">
                 <div className="text-3xl mb-2 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
                   🏅
                 </div>
@@ -354,7 +354,7 @@ export default function Home() {
                   Average Rating
                 </div>
               </div>
-              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-6 slide-in-bottom delay-800 group transition-all duration-300 hover:bg-white/70 hover:scale-105 hover:-translate-y-2 hover:shadow-lg">
+              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-6 slide-in-bottom group transition-all duration-300 hover:bg-white/70 hover:scale-105 hover:-translate-y-2 hover:shadow-lg">
                 <div className="text-3xl mb-2 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
                   🔄
                 </div>
@@ -368,7 +368,7 @@ export default function Home() {
             </div>
 
             {/* Call to Action */}
-            <div className="text-center fade-in delay-900">
+            <div className="text-center fade-in">
               <p className="text-lg text-gray-600 mb-6">
                 Join hundreds of satisfied customers who trust VanillaPod for
                 their sweetest moments
@@ -394,7 +394,7 @@ export default function Home() {
                 >
                   Our Vanilla Story
                 </h2>
-                <p className="text-lg text-gray-600 mb-6 leading-relaxed fade-in delay-200">
+                <p className="text-lg text-gray-600 mb-6 leading-relaxed fade-in">
                   At VanillaPod, we believe vanilla is far from ordinary. Our
                   journey began with a passion for authentic flavors and
                   traditional confectionery techniques. Each creation is a labor
@@ -408,9 +408,9 @@ export default function Home() {
                   Read More
                 </Link>
               </div>
-              <div className="text-center slide-in-right delay-300">
-                <div className="text-9xl mb-4 bounce-in delay-400">🌟</div>
-                <p className="text-gray-600 italic fade-in delay-500">
+              <div className="text-center slide-in-right">
+                <div className="text-9xl mb-4 bounce-in">🌟</div>
+                <p className="text-gray-600 italic fade-in">
                   "The finest vanilla confections I've ever tasted!"
                 </p>
               </div>
