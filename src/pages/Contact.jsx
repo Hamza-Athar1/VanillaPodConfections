@@ -27,10 +27,54 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form submitted:", formData);
-    alert("Thank you for your message! We'll get back to you soon.");
-    setFormData({ name: "", email: "", subject: "", message: "" });
+
+    // Validate required fields
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.subject ||
+      !formData.message
+    ) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+    // Create subject line with proper formatting
+    const subjectMap = {
+      general: "General Inquiry",
+      "custom-order": "Custom Order",
+      wholesale: "Wholesale Inquiry",
+      feedback: "Feedback",
+      other: "Other",
+    };
+
+    const emailSubject = `VanillaPod Confections - ${
+      subjectMap[formData.subject] || formData.subject
+    }`;
+
+    // Create email body with all form data
+    const emailBody = `Name: ${formData.name}
+Email: ${formData.email}
+Subject: ${subjectMap[formData.subject] || formData.subject}
+
+Message:
+${formData.message}`;
+
+    // Create mailto link
+    const mailtoLink = `mailto:sumaira@vanillapodconfections.ca?subject=${encodeURIComponent(
+      emailSubject
+    )}&body=${encodeURIComponent(emailBody)}`;
+
+    // Open email client
+    window.location.href = mailtoLink;
+
+    // Reset form after opening email client
+    setTimeout(() => {
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      alert(
+        "Your email client should now be open with your message ready to send!"
+      );
+    }, 1000);
   };
 
   return (
@@ -52,7 +96,7 @@ export default function Contact() {
             >
               Get In Touch
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto fade-in delay-200">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto fade-in">
               We'd love to hear from you! Whether you have questions about our
               confections, want to place a custom order, or just want to say
               hello.
@@ -62,7 +106,7 @@ export default function Contact() {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div className="space-y-8">
-              <div className="bg-white rounded-xl shadow-lg p-8 slide-in-left delay-300 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2 group">
+              <div className="bg-white rounded-xl shadow-lg p-8 slide-in-left transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2 group">
                 <h2
                   className="text-3xl font-bold text-gray-800 mb-6 text-glow group-hover:text-red-500 transition-colors duration-300"
                   style={{ fontFamily: "Lobster, cursive" }}
@@ -70,7 +114,7 @@ export default function Contact() {
                   Send Us a Message
                 </h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="fade-in delay-400">
+                  <div className="fade-in">
                     <label
                       htmlFor="name"
                       className="block text-sm font-medium text-gray-700 mb-2"
@@ -89,7 +133,7 @@ export default function Contact() {
                     />
                   </div>
 
-                  <div className="fade-in delay-500">
+                  <div className="fade-in">
                     <label
                       htmlFor="email"
                       className="block text-sm font-medium text-gray-700 mb-2"
@@ -108,7 +152,7 @@ export default function Contact() {
                     />
                   </div>
 
-                  <div className="fade-in delay-600">
+                  <div className="fade-in">
                     <label
                       htmlFor="subject"
                       className="block text-sm font-medium text-gray-700 mb-2"
@@ -132,7 +176,7 @@ export default function Contact() {
                     </select>
                   </div>
 
-                  <div className="fade-in delay-700">
+                  <div className="fade-in">
                     <label
                       htmlFor="message"
                       className="block text-sm font-medium text-gray-700 mb-2"
@@ -153,7 +197,7 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    className="w-full bg-red-400 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform shadow-lg pulse scale-in delay-800 hover:bg-red-500 hover:scale-105 hover:-translate-y-2 hover:shadow-xl"
+                    className="w-full bg-red-400 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform shadow-lg pulse scale-in hover:bg-red-500 hover:scale-105 hover:-translate-y-2 hover:shadow-xl"
                   >
                     Send Message
                   </button>

@@ -101,13 +101,13 @@ export default function Products() {
             >
               Our Confections
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto fade-in delay-200">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto fade-in">
               Discover our handcrafted collection of vanilla-inspired
               confections, made with love and the finest ingredients from around
               the world.
             </p>
             {getCartItemCount() > 0 && (
-              <div className="mt-4 inline-flex items-center bg-red-100 text-red-600 px-4 py-2 rounded-full bounce-in delay-300">
+              <div className="mt-4 inline-flex items-center bg-red-100 text-red-600 px-4 py-2 rounded-full bounce-in">
                 <span className="text-lg mr-2">🛒</span>
                 <span className="font-semibold">
                   {getCartItemCount()} item{getCartItemCount() !== 1 ? "s" : ""}{" "}
@@ -149,7 +149,7 @@ export default function Products() {
 
           {/* Category Filter - Only show when not loading */}
           {!loading && !error && (
-            <div className="flex flex-wrap justify-center gap-2 mb-12 slide-in-bottom delay-300">
+            <div className="flex flex-wrap justify-center gap-2 mb-12 slide-in-bottom">
               {categories.map((category, index) => (
                 <button
                   key={category}
@@ -169,7 +169,7 @@ export default function Products() {
 
           {/* Results Info - Only show when not loading */}
           {!loading && !error && (
-            <div className="text-center mb-8 fade-in delay-400">
+            <div className="text-center mb-8 fade-in">
               <p className="text-gray-600">
                 {selectedCategory === "All"
                   ? `Showing all ${filteredProducts.length} confections`
@@ -240,16 +240,16 @@ export default function Products() {
               ) : (
                 <div className="col-span-full text-center py-12 fade-in">
                   <div className="text-6xl mb-4 bounce-in">🍮</div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2 slide-in-top delay-200">
+                  <h3 className="text-2xl font-bold text-gray-800 mb-2 slide-in-top">
                     No confections found
                   </h3>
-                  <p className="text-gray-600 mb-4 fade-in delay-300">
+                  <p className="text-gray-600 mb-4 fade-in">
                     We couldn't find any confections in the "{selectedCategory}"
                     category.
                   </p>
                   <button
                     onClick={() => handleCategoryChange("All")}
-                    className="bg-red-400 hover:bg-red-500 text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 hover-lift hover-glow scale-in delay-400"
+                    className="bg-red-400 hover:bg-red-500 text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 hover-lift hover-glow scale-in"
                   >
                     View All Products
                   </button>
@@ -260,14 +260,14 @@ export default function Products() {
 
           {/* Call to Action - Only show when not loading */}
           {!loading && !error && (
-            <div className="text-center mt-16 bg-white rounded-xl shadow-lg p-8 slide-in-bottom delay-500 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2">
+            <div className="text-center mt-16 bg-white rounded-xl shadow-lg p-8 slide-in-bottom transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2">
               <h2
                 className="text-3xl font-bold text-gray-800 mb-4 text-glow"
                 style={{ fontFamily: "Lobster, cursive" }}
               >
                 Can't Find What You're Looking For?
               </h2>
-              <p className="text-lg text-gray-600 mb-6 fade-in delay-600">
+              <p className="text-lg text-gray-600 mb-6 fade-in">
                 We offer custom confections for special occasions and events.
               </p>
               <Link

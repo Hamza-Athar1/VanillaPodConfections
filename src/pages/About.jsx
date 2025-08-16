@@ -39,7 +39,7 @@ export default function About() {
             >
               Our Story
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto fade-in delay-200">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto fade-in">
               Discover the passion and craftsmanship behind every VanillaPod
               confection
             </p>
@@ -47,21 +47,21 @@ export default function About() {
 
           {/* Main Story Section */}
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
-            <div className="bg-white rounded-xl shadow-lg p-8 slide-in-left delay-300 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2">
+            <div className="bg-white rounded-xl shadow-lg p-8 slide-in-left transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2">
               <h2
                 className="text-3xl font-bold text-gray-800 mb-6 text-glow"
                 style={{ fontFamily: "Lobster, cursive" }}
               >
                 The Beginning
               </h2>
-              <p className="text-gray-600 leading-relaxed mb-4 fade-in delay-400">
+              <p className="text-gray-600 leading-relaxed mb-4 fade-in">
                 VanillaPod was born from a simple belief: vanilla is anything
                 but vanilla. Founded in 2018 by pastry chef Sumaira, our
                 confectionery began as a quest to showcase the complex,
                 sophisticated flavors of authentic vanilla beans from
                 Madagascar, Tahiti, and Mexico.
               </p>
-              <p className="text-gray-600 leading-relaxed fade-in delay-500">
+              <p className="text-gray-600 leading-relaxed fade-in">
                 What started as weekend farmers market visits has grown into a
                 beloved artisanal confectionery, but our commitment to quality
                 and authenticity remains unchanged. Every confection is still
@@ -70,21 +70,21 @@ export default function About() {
               </p>
             </div>
 
-            <div className="bg-white rounded-xl shadow-lg p-8 slide-in-right delay-400 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2 group">
+            <div className="bg-white rounded-xl shadow-lg p-8 slide-in-right transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2 group">
               <div className="text-center">
-                <div className="text-8xl mb-6 bounce-in delay-600 float group-hover:scale-110 transition-transform duration-300">
+                <div className="text-8xl mb-6 bounce-in float group-hover:scale-110 transition-transform duration-300">
                   👩‍🍳
                 </div>
                 <h3
-                  className="text-2xl font-bold text-gray-800 mb-4 text-glow fade-in delay-700 group-hover:text-red-500 transition-colors duration-300"
+                  className="text-2xl font-bold text-gray-800 mb-4 text-glow fade-in group-hover:text-red-500 transition-colors duration-300"
                   style={{ fontFamily: "Lobster, cursive" }}
                 >
                   Sumaira
                 </h3>
-                <p className="text-red-400 font-semibold mb-4 fade-in delay-800 group-hover:text-red-500 transition-colors duration-300">
+                <p className="text-red-400 font-semibold mb-4 fade-in group-hover:text-red-500 transition-colors duration-300">
                   Founder & Head Pastry Chef
                 </p>
-                <p className="text-gray-600 leading-relaxed fade-in delay-900 group-hover:text-gray-700 transition-colors duration-300">
+                <p className="text-gray-600 leading-relaxed fade-in group-hover:text-gray-700 transition-colors duration-300">
                   "I've always believed that the best confections tell a story.
                   Each vanilla pod we use has traveled thousands of miles and
                   carries the essence of its origin. My job is to honor that
@@ -95,16 +95,16 @@ export default function About() {
           </div>
 
           {/* Values Section */}
-          <div className="bg-white rounded-xl shadow-lg p-8 mb-16 scale-in delay-500 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2">
+          <div className="bg-white rounded-xl shadow-lg p-8 mb-16 scale-in transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2">
             <h2
-              className="text-3xl font-bold text-center text-gray-800 mb-12 text-glow fade-in delay-600"
+              className="text-3xl font-bold text-center text-gray-800 mb-12 text-glow fade-in"
               style={{ fontFamily: "Lobster, cursive" }}
             >
               Our Values
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center fade-in delay-700 group transition-all duration-300 hover:scale-105 hover:-translate-y-1">
-                <div className="text-6xl mb-4 bounce-in delay-800 pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
+              <div className="text-center fade-in group transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+                <div className="text-6xl mb-4 bounce-in pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
                   🌱
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-red-500 transition-colors duration-300">
@@ -116,8 +116,8 @@ export default function About() {
                   protect the environment.
                 </p>
               </div>
-              <div className="text-center fade-in delay-800 group transition-all duration-300 hover:scale-105 hover:-translate-y-1">
-                <div className="text-6xl mb-4 bounce-in delay-900 pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
+              <div className="text-center fade-in group transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+                <div className="text-6xl mb-4 bounce-in pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
                   ✨
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-red-500 transition-colors duration-300">
@@ -129,8 +129,8 @@ export default function About() {
                   as we grow.
                 </p>
               </div>
-              <div className="text-center fade-in delay-900 group transition-all duration-300 hover:scale-105 hover:-translate-y-1">
-                <div className="text-6xl mb-4 bounce-in delay-1000 pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
+              <div className="text-center fade-in group transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+                <div className="text-6xl mb-4 bounce-in pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
                   ❤️
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-red-500 transition-colors duration-300">
@@ -146,15 +146,15 @@ export default function About() {
           </div>
 
           {/* Process Section */}
-          <div className="bg-gradient-to-r from-red-400 to-pink-400 rounded-xl shadow-lg p-8 text-white mb-16 slide-in-bottom delay-1000 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2 group">
+          <div className="bg-gradient-to-r from-red-400 to-pink-400 rounded-xl shadow-lg p-8 text-white mb-16 slide-in-bottom transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2 group">
             <h2
-              className="text-3xl font-bold text-center mb-12 text-glow bounce-in delay-1100"
+              className="text-3xl font-bold text-center mb-12 text-glow bounce-in"
               style={{ fontFamily: "Lobster, cursive" }}
             >
               Our Crafting Process
             </h2>
             <div className="grid md:grid-cols-4 gap-6 text-center">
-              <div className="fade-in delay-1200 transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+              <div className="fade-in transition-all duration-300 hover:scale-105 hover:-translate-y-1">
                 <div className="text-4xl mb-3 float pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
                   🌍
                 </div>
@@ -163,7 +163,7 @@ export default function About() {
                   Premium vanilla beans from Madagascar, Tahiti, and Mexico
                 </p>
               </div>
-              <div className="fade-in delay-1300 transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+              <div className="fade-in transition-all duration-300 hover:scale-105 hover:-translate-y-1">
                 <div className="text-4xl mb-3 float pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
                   🧪
                 </div>
@@ -207,7 +207,7 @@ export default function About() {
             </p>
             <div className="flex justify-center gap-4 flex-wrap">
               <a
-                href={"https://www.facebook.com/VanillaPodConfections"}
+                href={"https://www.instagram.com/vanillapodconfections/"}
                 target="_blank"
                 className="bg-red-400 text-white font-semibold py-3 px-6 rounded-full transition-all duration-200 pulse scale-in hover:bg-red-500 hover:scale-105 hover:-translate-y-1 hover:shadow-lg transform shadow-md"
               >

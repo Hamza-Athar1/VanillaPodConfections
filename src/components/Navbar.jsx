@@ -68,6 +68,13 @@ export default function Navbar() {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-400 transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link
+              to="/workshop"
+              className=" hover:text-red-400 font-medium py-2 px-1 transition-colors duration-300 relative group"
+            >
+              Workshop
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-400 transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+            <Link
               to="/about"
               className=" hover:text-red-400 font-medium py-2 px-1 transition-colors duration-300 relative group"
             >
@@ -111,6 +118,13 @@ export default function Navbar() {
               onClick={() => setIsMenuOpen(false)}
             >
               Products
+            </Link>
+            <Link
+              to="/workshop"
+              className="block px-3 py-2 hover:text-red-400 hover:bg-gray-700 rounded-md font-medium transition-colors duration-300"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Workshop
             </Link>
             <Link
               to="/about"
