@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+import logo from "../assets/icon.png"; // Adjust the path to your logo image
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -18,7 +18,7 @@ export default function Navbar() {
               to="/"
               className="flex items-center text-[#334155] hover:text-red-400 transition-colors duration-300 no-underline font-bold text-xl"
             >
-              <span className="text-3xl mr-2">🍰</span>
+              <img src={logo} className="object-cover h-14 mr-2" alt="Logo" />
               <span
                 className="font-bold text-2xl hidden sm:block"
                 style={{ fontFamily: "Lobster, cursive", fontSize: "2rem" }}
