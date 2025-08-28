@@ -25,28 +25,46 @@ export default function Products() {
 
   // Load products and categories from WordPress API
   useEffect(() => {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+
     const loadData = async () => {
       try {
         setLoading(true);
         setError(null);
 
-        // Load products and categories from WordPress
+        // Load products and categories from WordPress with timeout
         const [wpProducts, wpCategories] = await Promise.all([
-          getProducts(),
-          getCategories(),
+          getProducts(controller.signal),
+          getCategories(controller.signal),
         ]);
 
         setProducts(wpProducts);
         setCategories(wpCategories);
+        clearTimeout(timeoutId); // Clear timeout on successful completion
       } catch (err) {
-        console.error("Error loading products:", err);
-        setError("Failed to load products. Please try again later.");
+        if (err.name === "AbortError") {
+          console.log("API request timed out after 5 seconds");
+          setError(
+            "Request timed out. The server is taking too long to respond. Please try again."
+          );
+        } else {
+          console.error("Error loading products:", err);
+          setError("Failed to load products. Please try again later.");
+        }
       } finally {
         setLoading(false);
+        clearTimeout(timeoutId);
       }
     };
 
     loadData();
+
+    // Cleanup function to abort request if component unmounts
+    return () => {
+      controller.abort();
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   // Filter products based on selected category
