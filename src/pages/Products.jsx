@@ -2,14 +2,17 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 import { getProducts, getCategories } from "../utils/GetProducts";
+import { useCart } from "../context/CartContext";
 
 export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [cart, setCart] = useState([]);
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState(["All"]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  // Use global cart context
+  const { addToCart, getCartItemCount, getCartTotal } = useCart();
 
   const productsStructuredData = {
     "@context": "https://schema.org",
@@ -59,27 +62,7 @@ export default function Products() {
 
   // Handle add to cart
   const handleAddToCart = (product) => {
-    const existingItem = cart.find((item) => item.id === product.id);
-
-    if (existingItem) {
-      setCart(
-        cart.map((item) =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        )
-      );
-    } else {
-      setCart([...cart, { ...product, quantity: 1 }]);
-    }
-
-    // Show success message
-    alert(`${product.name} added to cart!`);
-  };
-
-  // Get cart item count
-  const getCartItemCount = () => {
-    return cart.reduce((total, item) => total + item.quantity, 0);
+    addToCart(product);
   };
 
   return (
@@ -290,16 +273,7 @@ export default function Products() {
                     {getCartItemCount() !== 1 ? "s" : ""}
                   </p>
                   <p className="text-sm opacity-90">
-                    Total: $
-                    {cart
-                      .reduce(
-                        (total, item) =>
-                          total +
-                          parseFloat(item.price.replace("$", "")) *
-                            item.quantity,
-                        0
-                      )
-                      .toFixed(2)}
+                    Total: ${getCartTotal().toFixed(2)}
                   </p>
                 </div>
                 <Link
