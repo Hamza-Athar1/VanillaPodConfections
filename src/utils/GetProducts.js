@@ -7,9 +7,10 @@ const API_BASE_URL = 'https://vanillapodconfections.ca/wp-json/vpc/v1';
 
 /**
  * Fetches all products from WordPress
+ * @param {AbortSignal} [signal] - AbortController signal for request cancellation
  * @returns {Promise<Array>} Array of product objects
  */
-export const getProducts = async () => {
+export const getProducts = async (signal = null) => {
   try {
     const response = await fetch(`${API_BASE_URL}/products`, {
       method: 'GET',
@@ -17,7 +18,9 @@ export const getProducts = async () => {
         'Content-Type': 'application/json',
       },
       // Add cache control for better performance
-      cache: 'default'
+      cache: 'default',
+      // Add abort signal if provided
+      signal: signal
     });
 
     if (!response.ok) {
@@ -44,12 +47,13 @@ export const getProducts = async () => {
 /**
  * Fetches products by category
  * @param {string} category - Product category to filter by
+ * @param {AbortSignal} [signal] - AbortController signal for request cancellation
  * @returns {Promise<Array>} Array of filtered product objects
  */
-export const getProductsByCategory = async (category) => {
+export const getProductsByCategory = async (category, signal = null) => {
   try {
     // First get all products, then filter (since your API doesn't seem to support category filtering)
-    const allProducts = await getProducts();
+    const allProducts = await getProducts(signal);
     
     if (category === 'All') {
       return allProducts;
@@ -73,12 +77,13 @@ export const getProductsByCategory = async (category) => {
 /**
  * Fetches a single product by ID
  * @param {number|string} productId - Product ID
+ * @param {AbortSignal} [signal] - AbortController signal for request cancellation
  * @returns {Promise<Object|null>} Product object or null if not found
  */
-export const getProductById = async (productId) => {
+export const getProductById = async (productId, signal = null) => {
   try {
     // Since your API returns all products, we'll get all and find the specific one
-    const allProducts = await getProducts();
+    const allProducts = await getProducts(signal);
     return allProducts.find(product => product.id == productId) || null;
     
   } catch (error) {
@@ -94,12 +99,13 @@ export const getProductById = async (productId) => {
 
 /**
  * Fetches available product categories
+ * @param {AbortSignal} [signal] - AbortController signal for request cancellation
  * @returns {Promise<Array>} Array of category strings
  */
-export const getCategories = async () => {
+export const getCategories = async (signal = null) => {
   try {
     // Get all products and extract unique categories
-    const products = await getProducts();
+    const products = await getProducts(signal);
     const categories = [...new Set(products.map(product => product.category))];
     
     // Always include "All" at the beginning
