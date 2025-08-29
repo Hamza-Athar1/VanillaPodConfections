@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import SEO from "../components/SEO";
+import { useCart } from "../context/CartContext";
 
 export default function Workshop() {
+  // Use global cart context
+  const { addToCart } = useCart();
+
   const workshopStructuredData = {
     "@context": "https://schema.org",
     "@type": "Course",
@@ -149,10 +153,10 @@ export default function Workshop() {
 
     // Validate required fields
     if (
-      !bookingForm.name ||
-      !bookingForm.email ||
+      !bookingForm.name.trim() ||
+      !bookingForm.email.trim() ||
       !bookingForm.workshop ||
-      !bookingForm.date
+      !bookingForm.date.trim()
     ) {
       alert("Please fill in all required fields.");
       return;
@@ -162,6 +166,37 @@ export default function Workshop() {
     const workshopDetails = workshops.find(
       (w) => w.id === parseInt(bookingForm.workshop)
     );
+
+    if (!workshopDetails) {
+      alert("Please select a valid workshop.");
+      return;
+    }
+
+    // Add workshop to cart
+    const workshopCartItem = {
+      id: `workshop-${workshopDetails.id}-${Date.now()}`, // Unique ID for workshop booking
+      name: `${workshopDetails.title} - ${bookingForm.date}`,
+      description: `Workshop booking for ${
+        bookingForm.participants
+      } participant${bookingForm.participants > 1 ? "s" : ""} on ${
+        bookingForm.date
+      }`,
+      price:
+        parseFloat(workshopDetails.price.replace("$", "")) *
+        bookingForm.participants,
+      quantity: 1,
+      emoji: workshopDetails.emoji,
+      sku: `WS${workshopDetails.id}`,
+      category: "Workshop",
+      workshopDetails: {
+        originalWorkshop: workshopDetails,
+        bookingInfo: bookingForm,
+        date: bookingForm.date,
+        participants: bookingForm.participants,
+      },
+    };
+
+    addToCart(workshopCartItem);
 
     // Create email subject and body
     const emailSubject = `Workshop Booking Request - ${workshopDetails?.title}`;
@@ -173,14 +208,20 @@ Phone: ${bookingForm.phone}
 Workshop: ${workshopDetails?.title}
 Preferred Date: ${bookingForm.date}
 Number of Participants: ${bookingForm.participants}
+Total Price: ${workshopDetails.price} x ${bookingForm.participants} = $${(
+      parseFloat(workshopDetails.price.replace("$", "")) *
+      bookingForm.participants
+    ).toFixed(2)}
 
 Additional Message:
 ${bookingForm.message}
 
 Workshop Details:
 - Duration: ${workshopDetails?.duration}
-- Price: ${workshopDetails?.price}
-- Level: ${workshopDetails?.level}`;
+- Price per person: ${workshopDetails?.price}
+- Level: ${workshopDetails?.level}
+
+Note: This workshop has been added to your cart for easy checkout.`;
 
     // Create mailto link
     const mailtoLink = `mailto:sumaira@vanillapodconfections.ca?subject=${encodeURIComponent(
@@ -190,7 +231,7 @@ Workshop Details:
     // Open email client
     window.location.href = mailtoLink;
 
-    // Reset form after opening email client
+    // Reset form and close modal
     setTimeout(() => {
       setBookingForm({
         name: "",
@@ -201,8 +242,9 @@ Workshop Details:
         participants: 1,
         message: "",
       });
+      setSelectedWorkshop(null);
       alert(
-        "Your email client should now be open with your workshop booking request ready to send!"
+        `Workshop added to cart! Your email client should now be open with your booking request ready to send.`
       );
     }, 1000);
   };
@@ -314,7 +356,13 @@ Workshop Details:
                 </div>
 
                 <button
-                  onClick={() => setSelectedWorkshop(workshop)}
+                  onClick={() => {
+                    setSelectedWorkshop(workshop);
+                    setBookingForm({
+                      ...bookingForm,
+                      workshop: workshop.id.toString(),
+                    });
+                  }}
                   className="w-full bg-red-400 hover:bg-red-500 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-lg"
                 >
                   Book This Workshop
@@ -416,6 +464,14 @@ Workshop Details:
                   </div>
 
                   <form onSubmit={handleBookingSubmit} className="space-y-4">
+                    {/* Hidden workshop ID field */}
+                    <input
+                      type="hidden"
+                      name="workshop"
+                      value={selectedWorkshop.id}
+                      onChange={handleBookingChange}
+                    />
+
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         Full Name *
