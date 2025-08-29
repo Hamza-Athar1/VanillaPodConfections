@@ -243,9 +243,6 @@ Note: This workshop has been added to your cart for easy checkout.`;
         message: "",
       });
       setSelectedWorkshop(null);
-      alert(
-        `Workshop added to cart! Your email client should now be open with your booking request ready to send.`
-      );
     }, 1000);
   };
 
