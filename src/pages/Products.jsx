@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { fetchProducts, fetchImageUrl } from "../utils/fetchFunctions";
 import SEO from "../components/SEO";
 import { useCart } from "../context/CartContext";
 
@@ -22,48 +23,45 @@ export default function Products() {
     url: "https://vanillapodconfections.com/products",
   };
 
-  // Load products and categories from WordPress API
   useEffect(() => {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+    fetchProducts()
+      .then(async (products) => {
+        let data = products.rows;
+        console.log(data);
 
-    const loadData = async () => {
-      try {
-        setLoading(true);
-        setError(null);
+        // Fetch image URLs for products with imageID
+        const productsWithImages = await Promise.all(
+          data.map(async (product) => {
+            if (product.imageID) {
+              try {
+                const imageUrl = await fetchImageUrl(product.imageID);
+                return { ...product, imageUrl };
+              } catch (err) {
+                console.error(
+                  `Error fetching image for product ${product.id}:`,
+                  err,
+                );
+                return product;
+              }
+            }
+            return product;
+          }),
+        );
 
-        // Load products and categories from WordPress with timeout
-        const [wpProducts, wpCategories] = await Promise.all([
-          getProducts(controller.signal),
-          getCategories(controller.signal),
-        ]);
+        setProducts(productsWithImages);
 
-        setProducts(wpProducts);
-        setCategories(wpCategories);
-        clearTimeout(timeoutId); // Clear timeout on successful completion
-      } catch (err) {
-        if (err.name === "AbortError") {
-          console.log("API request timed out after 5 seconds");
-          setError(
-            "Request timed out. The server is taking too long to respond. Please try again.",
-          );
-        } else {
-          console.error("Error loading products:", err);
-          setError("Failed to load products. Please try again later.");
-        }
-      } finally {
+        // Extract unique categories from products
+        const uniqueCategories = [
+          ...new Set(productsWithImages.map((p) => p.category)),
+        ];
+        setCategories(["All", ...uniqueCategories.sort()]);
         setLoading(false);
-        clearTimeout(timeoutId);
-      }
-    };
-
-    loadData();
-
-    // Cleanup function to abort request if component unmounts
-    return () => {
-      controller.abort();
-      clearTimeout(timeoutId);
-    };
+      })
+      .catch((err) => {
+        console.error("Error fetching products:", err);
+        setError("Failed to load products. Please try again later.");
+        setLoading(false);
+      });
   }, []);
 
   // Filter products based on selected category
@@ -152,7 +150,7 @@ export default function Products() {
             <div className="flex flex-wrap justify-center gap-2 mb-12 slide-in-bottom">
               {categories.map((category, index) => (
                 <button
-                  key={category}
+                  key={index}
                   onClick={() => handleCategoryChange(category)}
                   className={`px-4 py-2 rounded-full border-2 border-red-400 transition-all duration-300 font-medium hover-scale ${
                     selectedCategory === category
@@ -187,27 +185,35 @@ export default function Products() {
                 filteredProducts.map((product, index) => (
                   <div
                     key={product.id}
-                    className="bg-white rounded-xl shadow-lg transition-all duration-300 overflow-hidden group scale-in hover:shadow-xl hover:scale-105 hover:-translate-y-2"
+                    className={`bg-white pt-5 rounded-xl shadow-lg transition-all duration-300 overflow-hidden group scale-in hover:shadow-xl hover:scale-105 hover:-translate-y-2 ${
+                      !product.available ? "opacity-60" : ""
+                    }`}
                     style={{
                       animationDelay: `${0.6 + (index % 6) * 0.1}s`,
                       animationFillMode: "both",
                     }}
                   >
+                    {/* Featured Badge */}
+                    {product.featured && (
+                      <div className="absolute top-2 right-2 bg-yellow-400 text-gray-800 px-3 py-1 rounded-full text-sm font-bold z-10">
+                        ⭐ Featured
+                      </div>
+                    )}
+
                     {/* Product Image */}
-                    {product.image ? (
-                      <div className="h-48 overflow-hidden">
+                    {product.imageUrl ? (
+                      <div className="h-48 overflow-hidden mb-2">
                         <img
-                          src={product.image}
+                          src={product.imageUrl}
                           alt={product.name}
-                          className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                          className=" w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
                           loading="lazy"
+                          style={{ borderRadius: "50px" }}
                         />
                       </div>
                     ) : (
                       <div className="h-48 bg-gradient-to-br from-pink-100 to-orange-100 flex items-center justify-center">
-                        <div className="text-8xl opacity-50">
-                          {product.emoji}
-                        </div>
+                        <div className="text-8xl opacity-50">🍮</div>
                       </div>
                     )}
 
@@ -224,13 +230,18 @@ export default function Products() {
                         </p>
                         <div className="flex items-center justify-between">
                           <span className="text-2xl font-bold text-red-400 text-glow group-hover:text-red-500 transition-colors duration-300">
-                            {product.price}
+                            ${product.price.toFixed(2)}
                           </span>
                           <button
                             onClick={() => handleAddToCart(product)}
-                            className="bg-red-400 text-white font-semibold py-2 px-4 rounded-full transition-all duration-300 transform shadow-md hover:bg-red-500 hover:scale-105 hover:-translate-y-1 hover:shadow-lg"
+                            disabled={!product.available}
+                            className={`text-white font-semibold py-2 px-4 rounded-full transition-all duration-300 transform shadow-md ${
+                              product.available
+                                ? "bg-red-400 hover:bg-red-500 hover:scale-105 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+                                : "bg-gray-400 cursor-not-allowed"
+                            }`}
                           >
-                            Add to Cart
+                            {product.available ? "Add to Cart" : "Out of Stock"}
                           </button>
                         </div>
                       </div>
