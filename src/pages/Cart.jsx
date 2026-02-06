@@ -217,7 +217,6 @@ export default function Cart() {
                             {item.description}
                           </p>
                           <p className="text-lg font-semibold text-red-400 mt-2">
-                            $
                             {typeof item.price === "string"
                               ? item.price.startsWith("$")
                                 ? item.price

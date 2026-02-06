@@ -11,19 +11,16 @@ export const useCart = () => {
 };
 
 export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([]);
-
-  // Load cart from localStorage on mount
-  useEffect(() => {
-    const savedCart = localStorage.getItem("vanillapod-cart");
-    if (savedCart) {
-      try {
-        setCartItems(JSON.parse(savedCart));
-      } catch (error) {
-        console.error("Error loading cart from localStorage:", error);
-      }
+  // Initialize state from localStorage
+  const [cartItems, setCartItems] = useState(() => {
+    try {
+      const savedCart = localStorage.getItem("vanillapod-cart");
+      return savedCart ? JSON.parse(savedCart) : [];
+    } catch (error) {
+      console.error("Error loading cart from localStorage:", error);
+      return [];
     }
-  }, []);
+  });
 
   // Save cart to localStorage whenever it changes
   useEffect(() => {
@@ -39,8 +36,8 @@ export const CartProvider = ({ children }) => {
         cartItems.map((item) =>
           item.id === product.id
             ? { ...item, quantity: item.quantity + 1 }
-            : item
-        )
+            : item,
+        ),
       );
     } else {
       // Add new item to cart
@@ -58,8 +55,8 @@ export const CartProvider = ({ children }) => {
     } else {
       setCartItems(
         cartItems.map((item) =>
-          item.id === id ? { ...item, quantity: newQuantity } : item
-        )
+          item.id === id ? { ...item, quantity: newQuantity } : item,
+        ),
       );
     }
   };
