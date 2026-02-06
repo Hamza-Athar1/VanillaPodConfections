@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
+import { fetchProducts } from "../utils/fetchProducts";
 import FC from "../assets/FeaturedConfection.png";
 import SEO from "../components/SEO";
+import { useEffect } from "react";
+
+useEffect(() => {
+  fetchProducts().then((products) => {
+    console.log("Fetched products:", products);
+  });
+}, []);
 
 export default function Home() {
   const homeStructuredData = {

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
-import { getProducts, getCategories } from "../utils/GetProducts";
 import { useCart } from "../context/CartContext";
 
 export default function Products() {
@@ -46,7 +45,7 @@ export default function Products() {
         if (err.name === "AbortError") {
           console.log("API request timed out after 5 seconds");
           setError(
-            "Request timed out. The server is taking too long to respond. Please try again."
+            "Request timed out. The server is taking too long to respond. Please try again.",
           );
         } else {
           console.error("Error loading products:", err);

@@ -62,7 +62,7 @@ ${formData.message}`;
 
     // Create mailto link
     const mailtoLink = `mailto:sumaira@vanillapodconfections.ca?subject=${encodeURIComponent(
-      emailSubject
+      emailSubject,
     )}&body=${encodeURIComponent(emailBody)}`;
 
     // Open email client
@@ -72,7 +72,7 @@ ${formData.message}`;
     setTimeout(() => {
       setFormData({ name: "", email: "", subject: "", message: "" });
       alert(
-        "Your email client should now be open with your message ready to send!"
+        "Your email client should now be open with your message ready to send!",
       );
     }, 1000);
   };
@@ -205,22 +205,22 @@ ${formData.message}`;
               </div>
 
               {/* Inspirational Quote */}
-              <div className="bg-gradient-to-br from-pink-50 to-orange-50 rounded-xl shadow-lg p-8 text-center slide-in-left delay-900 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2 group">
-                <div className="text-6xl mb-6 bounce-in delay-1000 float group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+              <div className="bg-gradient-to-br from-pink-50 to-orange-50 rounded-xl shadow-lg p-8 text-center slide-in-left transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2 group">
+                <div className="text-6xl mb-6 bounce-in float group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                   💌
                 </div>
                 <h3
-                  className="text-2xl font-bold text-gray-800 mb-6 text-glow fade-in delay-1100 group-hover:text-red-500 transition-colors duration-300"
+                  className="text-2xl font-bold text-gray-800 mb-6 text-glow fade-in group-hover:text-red-500 transition-colors duration-300"
                   style={{ fontFamily: "Lobster, cursive" }}
                 >
                   We're Here to Help
                 </h3>
-                <blockquote className="text-lg text-gray-700 italic leading-relaxed mb-4 fade-in delay-1200 group-hover:text-gray-800 transition-colors duration-300">
+                <blockquote className="text-lg text-gray-700 italic leading-relaxed mb-4 fade-in  group-hover:text-gray-800 transition-colors duration-300">
                   "Every message we receive is like finding a sweet note in a
                   cookie jar. We read each one with care and respond with the
                   same love we put into our confections."
                 </blockquote>
-                <p className="text-sm text-gray-600 font-semibold fade-in delay-1300 group-hover:text-gray-700 transition-colors duration-300">
+                <p className="text-sm text-gray-600 font-semibold fade-in  group-hover:text-gray-700 transition-colors duration-300">
                   — Sumaira, Founder of VanillaPod Confections
                 </p>
               </div>
@@ -229,7 +229,7 @@ ${formData.message}`;
             {/* Contact Information */}
             <div className="space-y-8">
               {/* Contact Details */}
-              <div className="bg-white rounded-xl shadow-lg p-8 slide-in-right delay-400 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2">
+              <div className="bg-white rounded-xl shadow-lg p-8 slide-in-right transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2">
                 <h2
                   className="text-3xl font-bold text-gray-800 mb-6 text-glow"
                   style={{ fontFamily: "Lobster, cursive" }}
@@ -237,8 +237,8 @@ ${formData.message}`;
                   Contact Information
                 </h2>
                 <div className="space-y-4">
-                  <div className="flex items-center fade-in delay-500 group transition-all duration-300 hover:scale-105 hover:-translate-y-1"></div>
-                  <div className="flex items-center fade-in delay-600 group transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+                  <div className="flex items-center fade-in group transition-all duration-300 hover:scale-105 hover:-translate-y-1"></div>
+                  <div className="flex items-center fade-in group transition-all duration-300 hover:scale-105 hover:-translate-y-1">
                     <div className="text-2xl mr-4 pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
                       📞
                     </div>
@@ -254,7 +254,7 @@ ${formData.message}`;
                       </a>
                     </div>
                   </div>
-                  <div className="flex items-center fade-in delay-700 group transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+                  <div className="flex items-center fade-in group transition-all duration-300 hover:scale-105 hover:-translate-y-1">
                     <div className="text-2xl mr-4 pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
                       ✉️
                     </div>
@@ -270,7 +270,7 @@ ${formData.message}`;
                       </a>
                     </div>
                   </div>
-                  <div className="flex items-center fade-in delay-800 group transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+                  <div className="flex items-center fade-in group transition-all duration-300 hover:scale-105 hover:-translate-y-1">
                     <div className="text-2xl mr-4 pulse group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
                       🕒
                     </div>
@@ -289,7 +289,7 @@ ${formData.message}`;
               </div>
 
               {/* FAQ Section */}
-              <div className="bg-white rounded-xl shadow-lg p-8 slide-in-right delay-900 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2">
+              <div className="bg-white rounded-xl shadow-lg p-8 slide-in-right transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2">
                 <h3
                   className="text-2xl font-bold text-gray-800 mb-6 text-glow"
                   style={{ fontFamily: "Lobster, cursive" }}
@@ -297,7 +297,7 @@ ${formData.message}`;
                   Frequently Asked Questions
                 </h3>
                 <div className="space-y-4">
-                  <div className="fade-in delay-1000 group transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+                  <div className="fade-in group transition-all duration-300 hover:scale-105 hover:-translate-y-1">
                     <h4 className="font-semibold text-gray-800 mb-2 group-hover:text-red-500 transition-colors duration-300">
                       Do you ship nationwide?
                     </h4>
@@ -306,7 +306,7 @@ ${formData.message}`;
                       packaging to ensure freshness.
                     </p>
                   </div>
-                  <div className="fade-in delay-1100 group transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+                  <div className="fade-in group transition-all duration-300 hover:scale-105 hover:-translate-y-1">
                     <h4 className="font-semibold text-gray-800 mb-2 group-hover:text-red-500 transition-colors duration-300">
                       Can you accommodate allergies?
                     </h4>
@@ -315,7 +315,7 @@ ${formData.message}`;
                       to discuss your specific needs.
                     </p>
                   </div>
-                  <div className="fade-in delay-1200 group transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+                  <div className="fade-in group transition-all duration-300 hover:scale-105 hover:-translate-y-1">
                     <h4 className="font-semibold text-gray-800 mb-2 group-hover:text-red-500 transition-colors duration-300">
                       How far in advance should I order for events?
                     </h4>
@@ -328,25 +328,25 @@ ${formData.message}`;
               </div>
 
               {/* Social Media */}
-              <div className="bg-gradient-to-r from-red-400 to-pink-400 rounded-xl shadow-lg p-8 text-white text-center slide-in-right delay-1300 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2 group">
+              <div className="bg-gradient-to-r from-red-400 to-pink-400 rounded-xl shadow-lg p-8 text-white text-center slide-in-right transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2 group">
                 <h3
-                  className="text-2xl font-bold mb-4 text-glow bounce-in delay-1400"
+                  className="text-2xl font-bold mb-4 text-glow bounce-in"
                   style={{ fontFamily: "Lobster, cursive" }}
                 >
                   Follow Us
                 </h3>
-                <p className="mb-6 opacity-90 fade-in delay-1500 group-hover:opacity-100 transition-opacity duration-300">
+                <p className="mb-6 opacity-90 fade-in group-hover:opacity-100 transition-opacity duration-300">
                   Stay updated with our latest creations and behind-the-scenes
                   content!
                 </p>
                 <div className="flex justify-center space-x-4">
-                  <button className="bg-white bg-opacity-20 p-3 rounded-full transition-all duration-300 pulse scale-in delay-1600 hover:bg-opacity-40 hover:scale-125 hover:rotate-12">
+                  <button className="bg-white bg-opacity-20 p-3 rounded-full transition-all duration-300 pulse scale-in hover:bg-opacity-40 hover:scale-125 hover:rotate-12">
                     📘
                   </button>
-                  <button className="bg-white bg-opacity-20 p-3 rounded-full transition-all duration-300 pulse scale-in delay-1700 hover:bg-opacity-40 hover:scale-125 hover:rotate-12">
+                  <button className="bg-white bg-opacity-20 p-3 rounded-full transition-all duration-300 pulse scale-in hover:bg-opacity-40 hover:scale-125 hover:rotate-12">
                     📷
                   </button>
-                  <button className="bg-white bg-opacity-20 p-3 rounded-full transition-all duration-300 pulse scale-in delay-1800 hover:bg-opacity-40 hover:scale-125 hover:rotate-12">
+                  <button className="bg-white bg-opacity-20 p-3 rounded-full transition-all duration-300 pulse scale-in hover:bg-opacity-40 hover:scale-125 hover:rotate-12">
                     🐦
                   </button>
                 </div>

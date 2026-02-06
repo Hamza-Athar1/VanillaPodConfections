@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
-import { submitOrder } from "../utils/OrderAPI";
 import { useCart } from "../context/CartContext";
 
 export default function Cart() {
@@ -441,8 +440,8 @@ export default function Cart() {
                     {checkoutStatus.isProcessing
                       ? "Processing Order..."
                       : checkoutStatus.isSuccess
-                      ? "Order Complete! 🎉"
-                      : "Place Order"}
+                        ? "Order Complete! 🎉"
+                        : "Place Order"}
                   </button>
 
                   {/* Continue Shopping - only show if not successful */}
