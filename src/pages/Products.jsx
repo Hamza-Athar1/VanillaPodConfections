@@ -202,17 +202,16 @@ export default function Products() {
 
                     {/* Product Image */}
                     {product.imageUrl ? (
-                      <div className="h-48 overflow-hidden mb-2">
+                      <div className="h-48 w-auto overflow-hidden mb-2">
                         <img
                           src={product.imageUrl}
                           alt={product.name}
-                          className=" w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                          className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
                           loading="lazy"
-                          style={{ borderRadius: "50px" }}
                         />
                       </div>
                     ) : (
-                      <div className="h-48 bg-gradient-to-br from-pink-100 to-orange-100 flex items-center justify-center">
+                      <div className="h-48 bg-gradient-to-br from-pink-100 to-orange-100 flex items-center justify-center rounded-lg">
                         <div className="text-8xl opacity-50">🍮</div>
                       </div>
                     )}
